@@ -18,7 +18,7 @@ const LoadingSpinner = () => (
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<Tab>(Tab.ALL);
-  
+
   // Auto-detect browser language
   const detectLanguage = (): Language => {
     try {
@@ -31,10 +31,10 @@ export default function App() {
   };
 
   const [language, setLanguage] = useState<Language>(detectLanguage);
-  
+
   // Optimization: Lift chat state so it persists between tab switches/orb toggles
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>([
-    { role: 'model', text: 'Hello! I am your AI assistant for CE Generators and Pumps. We provide Weichai, Yuchai, Yunnei, Kefo, Perkins, and Cummins generators. Ask me anything in English, Amharic, Chinese, Tigrinya, or Oromifa.' }
+    { role: 'model', text: 'Hello! I am your AI for CE Generators and Pumps. We provide Weichai, Yuchai, Yunnei, Kefo, Perkins, Cummins generators and all kinds of pumps. Ask me anything in English, Amharic, Chinese, Tigrinya, or Oromifa.' }
   ]);
 
   // Handle tab change with smooth scroll to top
@@ -57,7 +57,7 @@ export default function App() {
           {content}
         </Suspense>
       </main>
-      
+
       {/* Floating Assistant Orb (Persistent Overlay) */}
       <AIAssistantOrb chatMessages={chatMessages} setChatMessages={setChatMessages} language={language} />
     </Layout>

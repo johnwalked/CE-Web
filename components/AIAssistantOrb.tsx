@@ -37,7 +37,7 @@ export const AIAssistantOrb: React.FC<AIAssistantOrbProps> = ({ chatMessages, se
       {/* Floating Full Screen Overlay */}
       {isOpen && (
         <div className="fixed inset-2 md:inset-6 z-[100] bg-zinc-950/95 backdrop-blur-3xl flex flex-col animate-in fade-in zoom-in-95 duration-500 rounded-[2.5rem] border border-zinc-800 overflow-hidden shadow-2xl ring-1 ring-yellow-500/20">
-          
+
           {/* Header */}
           <div className="absolute top-0 left-0 w-full p-6 flex items-center justify-between z-20 pointer-events-none">
             {/* Logo Area */}
@@ -46,7 +46,7 @@ export const AIAssistantOrb: React.FC<AIAssistantOrbProps> = ({ chatMessages, se
                 <Cog className="w-6 h-6 text-black animate-spin-slow" />
               </div>
               <div className="hidden md:block">
-                <h2 className="text-white font-black tracking-widest uppercase">CE ASSISTANT</h2>
+                <h2 className="text-white font-black tracking-widest uppercase">CE <span className="text-yellow-500">LIVE</span></h2>
                 <div className="flex items-center gap-1.5 opacity-80">
                   <Phone className="w-3 h-3 text-yellow-500" />
                   <span className="text-[10px] font-mono text-yellow-500 font-bold">0966330309</span>
@@ -58,30 +58,28 @@ export const AIAssistantOrb: React.FC<AIAssistantOrbProps> = ({ chatMessages, se
             <div className="pointer-events-auto bg-black border border-zinc-800 rounded-full p-1.5 flex gap-1 shadow-2xl">
               <button
                 onClick={() => setActiveMode('chat')}
-                className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 flex items-center gap-2 uppercase tracking-wide ${
-                  activeMode === 'chat' 
-                    ? 'bg-yellow-500 text-black shadow-lg shadow-yellow-500/20' 
+                className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 flex items-center gap-2 uppercase tracking-wide ${activeMode === 'chat'
+                    ? 'bg-yellow-500 text-black shadow-lg shadow-yellow-500/20'
                     : 'text-zinc-500 hover:text-white hover:bg-zinc-900'
-                }`}
+                  }`}
               >
-                <MessageSquare className="w-4 h-4" /> 
+                <MessageSquare className="w-4 h-4" />
                 <span className="hidden sm:inline">{t.assistant.textChat}</span>
               </button>
               <button
                 onClick={() => setActiveMode('live')}
-                className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 flex items-center gap-2 uppercase tracking-wide ${
-                  activeMode === 'live' 
-                    ? 'bg-yellow-500 text-black shadow-lg shadow-yellow-500/20' 
+                className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 flex items-center gap-2 uppercase tracking-wide ${activeMode === 'live'
+                    ? 'bg-yellow-500 text-black shadow-lg shadow-yellow-500/20'
                     : 'text-zinc-500 hover:text-white hover:bg-zinc-900'
-                }`}
+                  }`}
               >
-                <Mic className="w-4 h-4" /> 
+                <Mic className="w-4 h-4" />
                 <span className="hidden sm:inline">{t.assistant.liveVoice}</span>
               </button>
             </div>
 
             {/* Close Button */}
-            <button 
+            <button
               onClick={() => setIsOpen(false)}
               className="pointer-events-auto w-12 h-12 rounded-full bg-zinc-900 hover:bg-yellow-500 hover:text-black border border-zinc-800 flex items-center justify-center text-zinc-400 hover:rotate-90 transition-all duration-300"
             >
@@ -94,9 +92,9 @@ export const AIAssistantOrb: React.FC<AIAssistantOrbProps> = ({ chatMessages, se
             <Suspense fallback={<AssistantLoader />}>
               {activeMode === 'chat' ? (
                 <div className="max-w-4xl mx-auto h-full pt-28 pb-8 px-6">
-                   <div className="h-full rounded-3xl overflow-hidden border border-zinc-800 shadow-2xl bg-black">
-                      <GeminiAssistant messages={chatMessages} setMessages={setChatMessages} language={language} />
-                   </div>
+                  <div className="h-full rounded-3xl overflow-hidden border border-zinc-800 shadow-2xl bg-black">
+                    <GeminiAssistant messages={chatMessages} setMessages={setChatMessages} language={language} />
+                  </div>
                 </div>
               ) : (
                 <LiveSession language={language} />
@@ -110,28 +108,28 @@ export const AIAssistantOrb: React.FC<AIAssistantOrbProps> = ({ chatMessages, se
       {!isOpen && (
         <div className="fixed bottom-8 right-8 z-50 flex flex-col items-end gap-3 group">
           <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0 pointer-events-none">
-             <div className="bg-black/80 backdrop-blur-xl border border-yellow-500/30 px-4 py-2 rounded-xl flex items-center gap-2 shadow-2xl">
-                <Phone className="w-3.5 h-3.5 text-yellow-500" />
-                <span className="text-xs font-mono text-white font-bold">0966330309</span>
-             </div>
+            <div className="bg-black/80 backdrop-blur-xl border border-yellow-500/30 px-4 py-2 rounded-xl flex items-center gap-2 shadow-2xl">
+              <Phone className="w-3.5 h-3.5 text-yellow-500" />
+              <span className="text-xs font-mono text-white font-bold">0966330309</span>
+            </div>
           </div>
           <button
             onClick={toggleOpen}
             className="w-20 h-20 rounded-full bg-gradient-to-br from-yellow-400 via-yellow-600 to-yellow-800 shadow-[0_0_40px_rgba(234,179,8,0.4)] hover:shadow-[0_0_60px_rgba(234,179,8,0.6)] border-4 border-black transition-all duration-500 hover:scale-110 animate-float cursor-pointer ring-2 ring-yellow-500/50"
           >
             <div className="relative w-full h-full flex items-center justify-center rounded-full overflow-hidden">
-               {/* Glass shine */}
+              {/* Glass shine */}
               <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/40 to-transparent"></div>
-              
+
               {/* Glow effect */}
               <div className="absolute inset-0 bg-yellow-400 rounded-full blur-xl opacity-20 animate-pulse"></div>
-              
+
               {/* Engine Cog */}
               <Cog className="w-10 h-10 text-black drop-shadow-sm group-hover:rotate-90 transition-transform duration-700 relative z-10" strokeWidth={2.5} />
-              
+
               {/* Call Center Mic Overlay */}
               <div className="absolute -bottom-1 -right-1 bg-black rounded-full p-2.5 border-[2px] border-yellow-500 shadow-lg z-20">
-                  <Mic className="w-4 h-4 text-white" />
+                <Mic className="w-4 h-4 text-white" />
               </div>
             </div>
           </button>

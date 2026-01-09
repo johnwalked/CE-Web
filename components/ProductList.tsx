@@ -19,14 +19,14 @@ export const ProductList: React.FC<ProductListProps> = memo(({ language, brandFi
 
   const t = TRANSLATIONS[language];
 
-  const filteredProducts = PRODUCTS.filter(p => {
+  const filteredProducts = React.useMemo(() => PRODUCTS.filter(p => {
     const matchesType = typeFilter === 'All' || p.type === typeFilter;
     const matchesBrand = !brandFilter || p.brand === brandFilter;
     const matchesSearch = !searchQuery ||
       p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       p.brand.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesType && matchesBrand && matchesSearch;
-  });
+  }), [typeFilter, brandFilter, searchQuery, language]);
 
   const getFilterLabel = (f: string) => {
     if (f === 'All') return t.products.all;
@@ -70,8 +70,8 @@ export const ProductList: React.FC<ProductListProps> = memo(({ language, brandFi
               key={f}
               onClick={() => setTypeFilter(f as any)}
               className={`px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 ${typeFilter === f
-                  ? 'bg-yellow-500 text-black shadow-lg'
-                  : 'text-zinc-400 hover:text-white hover:bg-white/5'
+                ? 'bg-yellow-500 text-black shadow-lg'
+                : 'text-zinc-400 hover:text-white hover:bg-white/5'
                 }`}
             >
               {getFilterLabel(f)}
@@ -94,8 +94,8 @@ export const ProductList: React.FC<ProductListProps> = memo(({ language, brandFi
               <button
                 onClick={(e) => handleRefineClick(e, product)}
                 className={`absolute bottom-4 left-4 z-30 flex items-center gap-2 px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest transition-all ${product.id === 'gen-1'
-                    ? 'bg-yellow-500 text-black shadow-xl animate-pulse scale-105'
-                    : 'bg-black/60 text-white hover:bg-yellow-500 hover:text-black opacity-0 group-hover:opacity-100'
+                  ? 'bg-yellow-500 text-black shadow-xl animate-pulse scale-105'
+                  : 'bg-black/60 text-white hover:bg-yellow-500 hover:text-black opacity-0 group-hover:opacity-100'
                   }`}
               >
                 <Wand2 className="w-3.5 h-3.5" />

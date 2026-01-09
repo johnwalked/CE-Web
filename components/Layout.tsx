@@ -2,6 +2,7 @@ import React, { memo } from 'react';
 import { Tab, Language } from '../types';
 import { Zap, Globe, Phone, ShieldCheck } from 'lucide-react';
 import { TRANSLATIONS } from '../constants';
+import { SocialSidebar } from './SocialSidebar';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -67,8 +68,8 @@ export const Layout: React.FC<LayoutProps> = memo(({ children, activeTab, onTabC
                   key={item.id}
                   onClick={() => onTabChange(item.id)}
                   className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 font-bold uppercase tracking-wide text-[10px] md:text-xs whitespace-nowrap flex-shrink-0 ${activeTab === item.id
-                      ? 'bg-yellow-500 text-black shadow-[0_0_20px_rgba(234,179,8,0.3)]'
-                      : 'text-zinc-400 hover:text-white hover:bg-white/5'
+                    ? 'bg-yellow-500 text-black shadow-[0_0_20px_rgba(234,179,8,0.3)]'
+                    : 'text-zinc-400 hover:text-white hover:bg-white/5'
                     }`}
                 >
                   <item.icon className={`w-3 h-3 md:w-4 md:h-4 ${activeTab === item.id ? 'text-black' : ''}`} />
@@ -114,6 +115,8 @@ export const Layout: React.FC<LayoutProps> = memo(({ children, activeTab, onTabC
       <div className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8">
         {children}
       </div>
+
+      <SocialSidebar />
 
       <style>{`
         .no-scrollbar::-webkit-scrollbar { display: none; }

@@ -2,7 +2,7 @@ import React, { useState, memo, Suspense, lazy } from 'react';
 import { PRODUCTS, TRANSLATIONS } from '../constants';
 import { Product, Language } from '../types';
 import { ProductModal } from './ProductModal';
-import { Info, Battery, Activity, ImageOff, Wand2, Loader2 } from 'lucide-react';
+import { Info, Battery, Activity, ImageOff, Wand2, Loader2, Search } from 'lucide-react';
 
 const ImageStudioModal = lazy(() => import('./ImageStudioModal').then(module => ({ default: module.ImageStudioModal })));
 
@@ -15,20 +15,24 @@ export const ProductList: React.FC<ProductListProps> = memo(({ language, brandFi
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [studioProduct, setStudioProduct] = useState<Product | null>(null);
   const [typeFilter, setTypeFilter] = useState<'All' | 'Generator' | 'Pump'>('All');
+  const [searchQuery, setSearchQuery] = useState('');
 
   const t = TRANSLATIONS[language];
 
   const filteredProducts = PRODUCTS.filter(p => {
     const matchesType = typeFilter === 'All' || p.type === typeFilter;
     const matchesBrand = !brandFilter || p.brand === brandFilter;
-    return matchesType && matchesBrand;
+    const matchesSearch = !searchQuery ||
+      p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      p.brand.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesType && matchesBrand && matchesSearch;
   });
 
   const getFilterLabel = (f: string) => {
-     if(f === 'All') return t.products.all;
-     if(f === 'Generator') return t.products.generator;
-     if(f === 'Pump') return t.products.pump;
-     return f;
+    if (f === 'All') return t.products.all;
+    if (f === 'Generator') return t.products.generator;
+    if (f === 'Pump') return t.products.pump;
+    return f;
   };
 
   const handleRefineClick = (e: React.MouseEvent, product: Product) => {
@@ -45,17 +49,30 @@ export const ProductList: React.FC<ProductListProps> = memo(({ language, brandFi
           </h2>
           {brandFilter && <p className="text-yellow-500 font-bold text-xs uppercase tracking-widest mt-1">Authorized Provider</p>}
         </div>
-        
-        <div className="flex bg-zinc-900 rounded-full p-1.5 border border-white/10 shadow-lg">
+
+        {/* Search Bar */}
+        <div className="relative group w-full max-w-xs md:max-w-sm">
+          <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
+            <Search className="w-4 h-4 text-zinc-500 group-focus-within:text-yellow-500 transition-colors" />
+          </div>
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder={t.chat.search}
+            className="w-full bg-zinc-900 border border-zinc-700 text-white text-sm rounded-full py-2.5 pl-10 pr-4 focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500/50 transition-all placeholder:text-zinc-600"
+          />
+        </div>
+
+        <div className="flex bg-zinc-900 rounded-full p-1.5 border border-white/10 shadow-lg shrink-0">
           {['All', 'Generator', 'Pump'].map((f) => (
             <button
               key={f}
               onClick={() => setTypeFilter(f as any)}
-              className={`px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
-                typeFilter === f 
-                  ? 'bg-yellow-500 text-black shadow-lg' 
+              className={`px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 ${typeFilter === f
+                  ? 'bg-yellow-500 text-black shadow-lg'
                   : 'text-zinc-400 hover:text-white hover:bg-white/5'
-              }`}
+                }`}
             >
               {getFilterLabel(f)}
             </button>
@@ -71,22 +88,21 @@ export const ProductList: React.FC<ProductListProps> = memo(({ language, brandFi
             className="group relative bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden cursor-pointer hover:border-yellow-500 transition-all duration-500 hover:shadow-[0_30px_60px_-15px_rgba(234,179,8,0.3)] transform hover:-translate-y-2 hover:scale-[1.02] z-0 hover:z-10"
           >
             <div className="aspect-video w-full overflow-hidden bg-black flex items-center justify-center relative m-2 rounded-xl mb-0 w-[calc(100%-1rem)]">
-               <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-10"></div>
-               
-               {/* Refine Overlay Button - Special highlight for Yuchai YC100 */}
-               <button 
-                 onClick={(e) => handleRefineClick(e, product)}
-                 className={`absolute bottom-4 left-4 z-30 flex items-center gap-2 px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest transition-all ${
-                   product.id === 'gen-1' 
-                   ? 'bg-yellow-500 text-black shadow-xl animate-pulse scale-105' 
-                   : 'bg-black/60 text-white hover:bg-yellow-500 hover:text-black opacity-0 group-hover:opacity-100'
-                 }`}
-               >
-                 <Wand2 className="w-3.5 h-3.5" />
-                 {t.products.refine}
-               </button>
+              <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-10"></div>
 
-               <div className="absolute top-0 right-0 w-0 h-0 border-t-[40px] border-r-[40px] border-t-transparent border-r-yellow-500 z-20"></div>
+              {/* Refine Overlay Button - Special highlight for Yuchai YC100 */}
+              <button
+                onClick={(e) => handleRefineClick(e, product)}
+                className={`absolute bottom-4 left-4 z-30 flex items-center gap-2 px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest transition-all ${product.id === 'gen-1'
+                    ? 'bg-yellow-500 text-black shadow-xl animate-pulse scale-105'
+                    : 'bg-black/60 text-white hover:bg-yellow-500 hover:text-black opacity-0 group-hover:opacity-100'
+                  }`}
+              >
+                <Wand2 className="w-3.5 h-3.5" />
+                {t.products.refine}
+              </button>
+
+              <div className="absolute top-0 right-0 w-0 h-0 border-t-[40px] border-r-[40px] border-t-transparent border-r-yellow-500 z-20"></div>
               <img
                 src={product.imageUrl}
                 alt={product.name}
@@ -114,7 +130,7 @@ export const ProductList: React.FC<ProductListProps> = memo(({ language, brandFi
                   {product.powerKW} kW
                 </span>
               </div>
-              
+
               <div className="grid grid-cols-2 gap-3 text-xs text-zinc-400 mt-2">
                 <div className="flex items-center gap-2 bg-black/20 p-2 rounded border border-white/5">
                   <Battery className="w-3.5 h-3.5 text-yellow-500" />
@@ -142,19 +158,19 @@ export const ProductList: React.FC<ProductListProps> = memo(({ language, brandFi
       )}
 
       {selectedProduct && (
-        <ProductModal 
-          product={selectedProduct} 
-          onClose={() => setSelectedProduct(null)} 
+        <ProductModal
+          product={selectedProduct}
+          onClose={() => setSelectedProduct(null)}
           language={language}
         />
       )}
 
       {studioProduct && (
         <Suspense fallback={<div className="fixed inset-0 z-[200] flex items-center justify-center bg-black/60"><Loader2 className="animate-spin text-yellow-500" /></div>}>
-          <ImageStudioModal 
-            product={studioProduct} 
-            onClose={() => setStudioProduct(null)} 
-            language={language} 
+          <ImageStudioModal
+            product={studioProduct}
+            onClose={() => setStudioProduct(null)}
+            language={language}
           />
         </Suspense>
       )}

@@ -2,7 +2,7 @@ import { Product } from './types';
 
 export const TRANSLATIONS = {
   en: {
-    nav: { all: 'All Products' },
+    nav: { all: 'All' },
     products: { title: 'Our Inventory', all: 'All', generator: 'Generator', pump: 'Pump', viewDetails: 'View Details', unavailable: 'Image Unavailable', refine: 'AI Refine' },
     modal: { description: 'Description', specifications: 'Specifications', requestQuote: 'Request Quote', maxPower: 'Max Power', cooling: 'Cooling', fuel: 'Fuel Cons.', noise: 'Noise', phase: 'Phase', dimensions: 'Dimensions', weight: 'Weight', pf: 'Power Factor' },
     live: { standby: 'Standby Mode', listening: 'Listening...', connectionActive: 'Live Connection Active', start: 'Start Live Call', end: 'End Session', desc_standby: 'Connect for real-time technical assistance.', desc_listening: 'Speak naturally. I can analyze specs, recommend brands, and solve technical issues.' },

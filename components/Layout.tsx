@@ -18,11 +18,11 @@ export const Layout: React.FC<LayoutProps> = memo(({ children, activeTab, onTabC
 
   const navItems = [
     { id: Tab.ALL, label: t.nav.all, icon: Zap },
-    { id: Tab.CE_POWER, label: 'CE Power', icon: ShieldCheck },
     { id: Tab.WEICHAI, label: 'Weichai', icon: ShieldCheck },
-    { id: Tab.YUCHAI, label: 'Yuchai', icon: ShieldCheck },
     { id: Tab.CUMMINS, label: 'Cummins', icon: ShieldCheck },
     { id: Tab.PERKINS, label: 'Perkins', icon: ShieldCheck },
+    { id: Tab.CE_POWER, label: 'CE Power', icon: ShieldCheck },
+    { id: Tab.YUCHAI, label: 'Yuchai', icon: ShieldCheck },
     { id: Tab.MTU, label: 'MTU', icon: ShieldCheck },
     { id: Tab.VOLVO, label: 'Volvo', icon: ShieldCheck },
     { id: Tab.YUNNEI, label: 'Yunnei', icon: ShieldCheck },
@@ -53,7 +53,7 @@ export const Layout: React.FC<LayoutProps> = memo(({ children, activeTab, onTabC
               </div>
               <div className="flex flex-col">
                 <h1 className="text-xs md:text-sm font-black tracking-wide leading-none text-white whitespace-nowrap">
-                  CE <span className="font-bold text-yellow-500 uppercase tracking-tighter">Factory</span>
+                  CE <span className="font-bold text-yellow-500 uppercase tracking-tighter">Power</span>
                 </h1>
                 <div className="flex items-center gap-1.5 mt-0.5">
                   <Phone className="w-3 h-3 text-yellow-400" />

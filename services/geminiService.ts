@@ -3,7 +3,7 @@ import {
   LiveServerMessage,
   Modality
 } from "@google/genai";
-import { SYSTEM_INSTRUCTION } from '../constants';
+import { SYSTEM_INSTRUCTION, PRODUCTS } from '../constants';
 
 // Type definition for optional AI Studio extension
 declare global {
@@ -220,12 +220,22 @@ export const connectLive = async (
   sendAudio: (data: Float32Array) => void;
   close: () => void;
 }> => {
+
+  const productCatalog = PRODUCTS.map(p =>
+    `ID: ${p.id} | Brand: ${p.brand} | Type: ${p.type} | Power: ${p.powerKW}kW / ${p.specs.maxPower} | Noise: ${p.specs.noiseLevel} | Desc: ${p.description} | Specs: ${JSON.stringify(p.specs)}`
+  ).join('\n');
+
   const languageContext = `
 [CRITICAL LANGUAGE PROTOCOL]
 1. INITIALIZATION: The user's interface is currently in '${currentLanguage}'. Start by delivering the Mandatory Greeting in the language associated with '${currentLanguage}'.
 2. DYNAMIC DETECTION: Match the user's spoken language instantly (Amharic, English, Chinese, Tigrinya, Oromiffa).
 3. DO NOT ASK FOR CLARIFICATION about the language. Just switch.
+
+[PRODUCT INVENTORY KNOWLEDGE - LIVE DATABASE]
+You have direct access to the current warehouse inventory. Use this list to answer specific questions like "what do you have in 50kw?" or "list silent generators".
+${productCatalog}
 `;
+
 
   const sessionPromise = getAiClient().live.connect({
     model: 'gemini-2.5-flash-native-audio-preview-12-2025',

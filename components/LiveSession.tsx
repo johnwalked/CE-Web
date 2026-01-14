@@ -86,7 +86,14 @@ export const LiveSession: React.FC<LiveSessionProps> = ({ language }) => {
     setIsConnecting(true);
 
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const stream = await navigator.mediaDevices.getUserMedia({
+        audio: {
+          echoCancellation: true,
+          noiseSuppression: true,
+          autoGainControl: true,
+          channelCount: 1
+        }
+      });
       const AudioContextClass = (window.AudioContext || (window as any).webkitAudioContext);
 
       // Input Context (16kHz for Gemini input)
@@ -323,8 +330,8 @@ const Controls = ({ isConnected, isConnecting, error, onToggle, t }: { isConnect
       <button
         onClick={onToggle}
         className={`group relative px-12 py-6 rounded-full font-black text-lg uppercase tracking-widest transition-all duration-500 transform hover:scale-105 active:scale-95 ${isConnected
-            ? 'bg-red-600/90 hover:bg-red-500 text-white shadow-[0_0_30px_rgba(220,38,38,0.5)]'
-            : 'bg-yellow-500 text-black hover:bg-yellow-400 shadow-[0_0_30px_rgba(234,179,8,0.4)]'
+          ? 'bg-red-600/90 hover:bg-red-500 text-white shadow-[0_0_30px_rgba(220,38,38,0.5)]'
+          : 'bg-yellow-500 text-black hover:bg-yellow-400 shadow-[0_0_30px_rgba(234,179,8,0.4)]'
           }`}
       >
         <div className="flex items-center gap-4">

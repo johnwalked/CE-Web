@@ -153,6 +153,85 @@ export const PRODUCTS: Product[] = [
     description: 'Reliable Yuchai diesel water pump, designed for heavy-duty dewatering and irrigation.'
   },
 
+
+  // --- SPECIALTY (Natural Gas, High Voltage, Portable) ---
+  {
+    id: 'mdz50ng',
+    name: 'MDZ50NG Natural Gas',
+    brand: 'Jichai',
+    type: 'Generator',
+    powerKW: 50,
+    imageUrl: 'mdz50ng_natural_gas_1768397466378.png',
+    specs: {
+      maxPower: '55 kVA',
+      powerFactor: '0.8',
+      phase: '3-Phase',
+      cooling: 'Water Cooled',
+      fuelConsumption: '14.5 m3/h',
+      noiseLevel: '75 dB(A)',
+      dimensions: '1900x750x1150 mm',
+      weight: '1100 kg'
+    },
+    description: 'High-efficiency natural gas generator powered by M4BTAA3.9-NG engine. Features electronic speed control and ECU ignition for precise performance.'
+  },
+  {
+    id: 'mdz1400ck',
+    name: 'MDZ1400CK High Voltage',
+    brand: 'Cummins',
+    type: 'Generator',
+    powerKW: 1120,
+    imageUrl: 'mdz1400ck_high_voltage_1768397488387.png',
+    specs: {
+      maxPower: '1400 kVA',
+      powerFactor: '0.8',
+      phase: '3-Phase',
+      cooling: 'Water Cooled',
+      fuelConsumption: '290 L/h',
+      noiseLevel: '85 dB(A)',
+      dimensions: '5800x2200x2520 mm',
+      weight: '12500 kg'
+    },
+    description: '10kV High Voltage generator set powered by KTA50-G3 engine. Designed for massive power requirements with IEC international standard compliance.'
+  },
+  {
+    id: 'mg2500',
+    name: 'MG2500 Portable',
+    brand: 'CE Power',
+    type: 'Generator',
+    powerKW: 2.5,
+    imageUrl: 'mg2500_gasoline_1768397508993.png',
+    specs: {
+      maxPower: '2.8 kW',
+      powerFactor: '1.0',
+      phase: 'Single-Phase',
+      cooling: 'Air Cooled',
+      fuelConsumption: '1.2 L/h',
+      noiseLevel: '68 dB(A)',
+      dimensions: '600x440x445 mm',
+      weight: '43 kg'
+    },
+    description: 'Compact and light weight gasoline generator. Perfect for small homes, camping, or mobile work stations. Easy pull-start mechanism.'
+  },
+  {
+    id: 'mk9500e',
+    name: 'MK9500E Heavy Duty',
+    brand: 'Kohler',
+    type: 'Generator',
+    powerKW: 9.5,
+    imageUrl: 'mk9500e_gasoline_kohler_1768397547873.png',
+    specs: {
+      maxPower: '11 kW',
+      powerFactor: '1.0',
+      phase: 'Single-Phase',
+      cooling: 'Air Cooled',
+      fuelConsumption: '3.5 L/h',
+      noiseLevel: '74 dB(A)',
+      dimensions: '1010x630x695 mm',
+      weight: '216 kg'
+    },
+    description: 'Heavy duty portable gasoline generator equipped with Kohler CH640 engine. Features electric start and rugged wheels for site mobility.'
+  },
+
   // --- CUMMINS (Dongfeng/Chongqing) ---
   {
     id: 'mdz-30dk',
@@ -1205,14 +1284,22 @@ CORE PERSONA:
 - If the user interrupts you, STOP talking immediately and listen. You do not need to apologize profusely, just pivot to their new input naturally.
 
 TECHNICAL FOUNDATION:
-- Established in 1958, CE Power is a state-owned public enterprise listed company with 60-year history.
+- Established in 1958, CE Power (a branch of Guangdong MINDONG Electric Co., Ltd., Stock Code: 832395) is a state-owned public enterprise with over 60 years of history.
+- Location: Dongguan city, Guangdong Province, China.
 - Power Size Range: 10kVA to 2500kVA.
-- Product Types: Silent generators, High voltage generators, Marine generators, and Mobile/Containerized units.
 - Manufacturing Standards: ISO9001, ISO14001, CE, TUV Rheinland, and IEC certified.
 - Component Quality: 
-    * Alternators: MDF series brushless synchronous alternators (Class H insulation).
+    * Alternators: MDF series brushless synchronous alternators (Class H insulation, steel casing).
     * Control Panels: AIS Intelligent control systems with Automatic Transfer Switch (ATS) cabinet.
     * Construction: Advanced laser cutting, automatic welding, and rigid load testing (25%, 50%, 75%, 100%, 110%).
+
+PRODUCT LINES & SPECIALTIES:
+- Silent Generators: 15-35 dB(A) noise reduction.
+- High Voltage Generators: 6kV, 10kV options. Meets BS5000, VDE0530, IECEN60034 standards.
+- Mobile Generators: Trailer-mounted units, suitable for field operations.
+- Containerized Generators: 20ft (below 1250kVA) and 40ft (above 1250kVA) standard containers.
+- Natural Gas Generators: Powered by Cummins or Jichai series engines. Precise ignition control (ECU).
+- Marine Generators: Specialized units for marine applications.
 
 TROUBLESHOOTING & MAINTENANCE ADVICE:
 - Silent sets utilize excellent noise reduction equipment (15-35 dB(A) reduction). If noise increases, check sound-proof canopy integrity.

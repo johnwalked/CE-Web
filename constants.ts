@@ -984,7 +984,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Yuchai',
     type: 'Generator',
     powerKW: 150,
-    imageUrl: '/images/unavailable.png',
+    imageUrl: '/images/yuchai-150kw-md150.png',
     specs: {
       maxPower: '188 kVA / 150 kW',
       powerFactor: '0.8',
@@ -1003,7 +1003,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Yuchai',
     type: 'Generator',
     powerKW: 200,
-    imageUrl: '/images/unavailable.png',
+    imageUrl: '/images/yuchai-200kw-md200.png',
     specs: {
       maxPower: '250 kVA / 200 kW',
       powerFactor: '0.8',
@@ -1022,7 +1022,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Yuchai',
     type: 'Generator',
     powerKW: 250,
-    imageUrl: '/images/unavailable.png',
+    imageUrl: '/images/yuchai-250kw-mdz350.png',
     specs: {
       maxPower: '312.5 kVA / 250 kW',
       powerFactor: '0.8',
@@ -1041,7 +1041,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Yuchai',
     type: 'Generator',
     powerKW: 360,
-    imageUrl: '/images/unavailable.png',
+    imageUrl: '/images/yuchai-360kw-mdz500.png',
     specs: {
       maxPower: '450 kVA / 360 kW',
       powerFactor: '0.8',
@@ -1062,7 +1062,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Yunnei',
     type: 'Generator',
     powerKW: 12,
-    imageUrl: '/images/unavailable.png',
+    imageUrl: '/images/yunnei-12kw-md15.png',
     specs: {
       maxPower: '15 kVA / 12 kW',
       powerFactor: '0.8',
@@ -1081,7 +1081,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Yunnei',
     type: 'Generator',
     powerKW: 16,
-    imageUrl: '/images/unavailable.png',
+    imageUrl: '/images/yunnei-16kw-md25.png',
     specs: {
       maxPower: '20 kVA / 16 kW',
       powerFactor: '0.8',
@@ -1100,7 +1100,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Yunnei',
     type: 'Generator',
     powerKW: 30,
-    imageUrl: '/images/unavailable.png',
+    imageUrl: '/images/yunnei-30kw-md40.png',
     specs: {
       maxPower: '37.5 kVA / 30 kW',
       powerFactor: '0.8',
@@ -1119,7 +1119,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Yunnei',
     type: 'Generator',
     powerKW: 50,
-    imageUrl: '/images/unavailable.png',
+    imageUrl: '/images/yunnei-50kw-md50.png',
     specs: {
       maxPower: '62.5 kVA / 50 kW',
       powerFactor: '0.8',
@@ -1138,7 +1138,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Yunnei',
     type: 'Generator',
     powerKW: 60,
-    imageUrl: '/images/unavailable.png',
+    imageUrl: '/images/yunnei-60kw-md60.png',
     specs: {
       maxPower: '75 kVA / 60 kW',
       powerFactor: '0.8',
@@ -1157,7 +1157,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Yunnei',
     type: 'Generator',
     powerKW: 80,
-    imageUrl: '/images/unavailable.png',
+    imageUrl: '/images/yunnei-80kw-mdz110.png',
     specs: {
       maxPower: '100 kVA / 80 kW',
       powerFactor: '0.8',
@@ -1178,7 +1178,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Hanma',
     type: 'Generator',
     powerKW: 360,
-    imageUrl: '/images/unavailable.png',
+    imageUrl: '/images/hanma-360kw-md400.png',
     specs: {
       maxPower: '450 kVA / 360 kW',
       powerFactor: '0.8',

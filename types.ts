@@ -2,7 +2,7 @@
 export interface Product {
   id: string;
   name: string;
-  brand: 'Yuchai' | 'Weichai' | 'Yunnei' | 'Cummins' | 'Perkins' | 'Kefo' | 'CE Power' | 'MTU' | 'Volvo' | 'Other';
+  brand: 'Yuchai' | 'Weichai' | 'Yunnei' | 'Cummins' | 'Perkins' | 'Kefo' | 'CE Power' | 'MTU' | 'Volvo' | 'Hanma' | 'Other';
   type: 'Generator' | 'Pump';
   powerKW: number;
   imageUrl: string;
@@ -40,7 +40,8 @@ export enum Tab {
   PERKINS = 'Perkins',
   KEFO = 'Kefo',
   MTU = 'MTU',
-  VOLVO = 'Volvo'
+  VOLVO = 'Volvo',
+  HANMA = 'Hanma'
 }
 
 export interface ChatMessage {

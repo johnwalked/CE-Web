@@ -976,6 +976,221 @@ export const PRODUCTS: Product[] = [
     },
     description: 'Small Kefo water pump for domestic use.'
   },
+
+  // --- YUCHAI (New Additions) ---
+  {
+    id: 'yuchai-150kw-md150',
+    name: 'Yuchai MD150 Industrial',
+    brand: 'Yuchai',
+    type: 'Generator',
+    powerKW: 150,
+    imageUrl: '/images/unavailable.png',
+    specs: {
+      maxPower: '188 kVA / 150 kW',
+      powerFactor: '0.8',
+      phase: '3 Phase',
+      cooling: 'Water Cooled',
+      fuelConsumption: '44.7 L/hr',
+      noiseLevel: 'Silent',
+      dimensions: '2450 x 1080 x 1770 mm',
+      weight: '1220 kg'
+    },
+    description: 'Powered by Yuchai YC6A245L-D21 engine.'
+  },
+  {
+    id: 'yuchai-200kw-md200',
+    name: 'Yuchai MD-200 Industrial',
+    brand: 'Yuchai',
+    type: 'Generator',
+    powerKW: 200,
+    imageUrl: '/images/unavailable.png',
+    specs: {
+      maxPower: '250 kVA / 200 kW',
+      powerFactor: '0.8',
+      phase: '3 Phase',
+      cooling: 'Water Cooled',
+      fuelConsumption: '63.6 L/hr',
+      noiseLevel: 'Silent',
+      dimensions: '3600 x 1500 x 2200 mm',
+      weight: '2900 kg'
+    },
+    description: 'Powered by Yuchai YC6MK350L-D20 engine.'
+  },
+  {
+    id: 'yuchai-250kw-mdz350',
+    name: 'Yuchai MDZ350YC Industrial',
+    brand: 'Yuchai',
+    type: 'Generator',
+    powerKW: 250,
+    imageUrl: '/images/unavailable.png',
+    specs: {
+      maxPower: '312.5 kVA / 250 kW',
+      powerFactor: '0.8',
+      phase: '3 Phase',
+      cooling: 'Water Cooled',
+      fuelConsumption: '77.6 L/hr',
+      noiseLevel: 'Silent',
+      dimensions: '4000 x 1200 x 2020 mm',
+      weight: '3100 kg'
+    },
+    description: 'Powered by Yuchai YC6MK420L-D20 engine.'
+  },
+  {
+    id: 'yuchai-360kw-mdz500',
+    name: 'Yuchai MDZ500YC Industrial',
+    brand: 'Yuchai',
+    type: 'Generator',
+    powerKW: 360,
+    imageUrl: '/images/unavailable.png',
+    specs: {
+      maxPower: '450 kVA / 360 kW',
+      powerFactor: '0.8',
+      phase: '3 Phase',
+      cooling: 'Water Cooled',
+      fuelConsumption: '98.2 L/hr',
+      noiseLevel: 'Silent',
+      dimensions: 'Standard',
+      weight: 'Standard'
+    },
+    description: 'Powered by Yuchai YC6T600L-D22 engine.'
+  },
+
+  // --- YUNNEI (New Models) ---
+  {
+    id: 'yunnei-12kw-md15',
+    name: 'Yunnei MD-15 Industrial',
+    brand: 'Yunnei',
+    type: 'Generator',
+    powerKW: 12,
+    imageUrl: '/images/unavailable.png',
+    specs: {
+      maxPower: '15 kVA / 12 kW',
+      powerFactor: '0.8',
+      phase: '3 Phase',
+      cooling: 'Water Cooled',
+      fuelConsumption: '4.76 L/hr',
+      noiseLevel: 'Silent',
+      dimensions: '1750 x 970 x 1530 mm',
+      weight: '980 kg'
+    },
+    description: 'Powered by Yunnei YN25ANJ25 engine.'
+  },
+  {
+    id: 'yunnei-16kw-md25',
+    name: 'Yunnei MD-25 Industrial',
+    brand: 'Yunnei',
+    type: 'Generator',
+    powerKW: 16,
+    imageUrl: '/images/unavailable.png',
+    specs: {
+      maxPower: '20 kVA / 16 kW',
+      powerFactor: '0.8',
+      phase: '3 Phase',
+      cooling: 'Water Cooled',
+      fuelConsumption: '6.75 L/hr',
+      noiseLevel: 'Silent',
+      dimensions: '1750 x 970 x 1530 mm',
+      weight: '980 kg'
+    },
+    description: 'Powered by Yunnei YN27BND25 engine.'
+  },
+  {
+    id: 'yunnei-30kw-md40',
+    name: 'Yunnei MD-40 Industrial',
+    brand: 'Yunnei',
+    type: 'Generator',
+    powerKW: 30,
+    imageUrl: '/images/unavailable.png',
+    specs: {
+      maxPower: '37.5 kVA / 30 kW',
+      powerFactor: '0.8',
+      phase: '3 Phase',
+      cooling: 'Water Cooled',
+      fuelConsumption: '9.4 L/hr',
+      noiseLevel: 'Silent',
+      dimensions: '2450 x 1080 x 1770 mm',
+      weight: '1220 kg'
+    },
+    description: 'Powered by Yunnei YC38DN36 engine. Can serve as MD40.'
+  },
+  {
+    id: 'yunnei-50kw-md50',
+    name: 'Yunnei MD-50 Industrial',
+    brand: 'Yunnei',
+    type: 'Generator',
+    powerKW: 50,
+    imageUrl: '/images/unavailable.png',
+    specs: {
+      maxPower: '62.5 kVA / 50 kW',
+      powerFactor: '0.8',
+      phase: '3 Phase',
+      cooling: 'Water Cooled',
+      fuelConsumption: '14.88 L/hr',
+      noiseLevel: 'Silent',
+      dimensions: '2450 x 1080 x 1770 mm',
+      weight: '1400 kg'
+    },
+    description: 'Powered by Yunnei YN38DTD60 engine.'
+  },
+  {
+    id: 'yunnei-60kw-md60',
+    name: 'Yunnei MD-60 Industrial',
+    brand: 'Yunnei',
+    type: 'Generator',
+    powerKW: 60,
+    imageUrl: '/images/unavailable.png',
+    specs: {
+      maxPower: '75 kVA / 60 kW',
+      powerFactor: '0.8',
+      phase: '3 Phase',
+      cooling: 'Water Cooled',
+      fuelConsumption: '14.88 L/hr',
+      noiseLevel: 'Silent',
+      dimensions: '2450 x 1080 x 1770 mm',
+      weight: '1400 kg'
+    },
+    description: 'Powered by Yunnei YN38DTD60 engine (High Output).'
+  },
+  {
+    id: 'yunnei-80kw-mdz110',
+    name: 'Yunnei MDZ110YN Industrial',
+    brand: 'Yunnei',
+    type: 'Generator',
+    powerKW: 80,
+    imageUrl: '/images/unavailable.png',
+    specs: {
+      maxPower: '100 kVA / 80 kW',
+      powerFactor: '0.8',
+      phase: '3 Phase',
+      cooling: 'Water Cooled',
+      fuelConsumption: 'N/A',
+      noiseLevel: 'Silent',
+      dimensions: 'Standard',
+      weight: 'Standard'
+    },
+    description: 'Powered by Yunnei YN48ECD 90 engine.'
+  },
+
+  // --- HANMA ---
+  {
+    id: 'hanma-360kw-md400',
+    name: 'Hanma MD400 Industrial',
+    brand: 'Hanma',
+    type: 'Generator',
+    powerKW: 360,
+    imageUrl: '/images/unavailable.png',
+    specs: {
+      maxPower: '450 kVA / 360 kW',
+      powerFactor: '0.8',
+      phase: '3 Phase',
+      cooling: 'Water Cooled',
+      fuelConsumption: '79 kg/hr',
+      noiseLevel: 'Silent',
+      dimensions: '4600 x 1900 x 2300 mm',
+      weight: '5000 kg'
+    },
+    description: 'Powered by Hanma CM6D30F.408 30 engine.'
+  },
 ];
 
 export const SYSTEM_INSTRUCTION = `

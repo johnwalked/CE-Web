@@ -1301,6 +1301,14 @@ PRODUCT LINES & SPECIALTIES:
 - Containerized Generators: 20ft (below 1250kVA) and 40ft (above 1250kVA) standard containers.
 - Natural Gas Generators: Powered by Cummins or Jichai series engines. Precise ignition control (ECU).
 - Marine Generators: Specialized units for marine applications.
+    *   **PUMP KNOWLEDGE BASE (Use Cases & Specs):**
+        - **Use Cases**: Agricultural irrigation (flooding fields), Industrial de-watering (mining, construction sites), Flood control (emergency response), and Water supply transfer.
+        - **Common Specs (90kW - 120kW Range)**:
+            - **90kW Pump**: Piston Size: 105mm. Flow: ~320 m³/h. Head: ~60m.
+            - **100kW Pump**: Piston Size: 110mm. Flow: ~360 m³/h. Head: ~70m.
+            - **120kW Pump**: Piston Size: 115mm. Flow: ~450 m³/h. Head: ~85m.
+        - *Note*: "Piston Size" is a critical spec users ask for. Always provide it for these models regardless of brand.
+
 
 TROUBLESHOOTING & MAINTENANCE ADVICE:
 - Silent sets utilize excellent noise reduction equipment (15-35 dB(A) reduction). If noise increases, check sound-proof canopy integrity.

@@ -2,9 +2,10 @@
 export interface Product {
   id: string;
   name: string;
-  brand: 'Yuchai' | 'Weichai' | 'Yunnei' | 'Cummins' | 'Perkins' | 'Kefo' | 'CE Power' | 'MTU' | 'Volvo' | 'Hanma' | 'Kohler' | 'Jichai' | 'Other';
+  brand: 'Yuchai' | 'Weichai' | 'Yunnei' | 'Cummins' | 'Perkins' | 'Kefo' | 'CE Power' | 'MTU' | 'Volvo' | 'Hanma' | 'Kohler' | 'Jichai' | 'United Power' | 'Last' | 'Other';
   type: 'Generator' | 'Pump';
   powerKW: number;
+  stock: number;
   imageUrl: string;
   specs: {
     maxPower: string;

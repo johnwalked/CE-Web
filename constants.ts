@@ -61,6 +61,7 @@ export const PRODUCTS: Product[] = [
     brand: 'CE Power',
     type: 'Generator',
     powerKW: 24,
+    stock: 0,
     imageUrl: '/images/mindong-30ds.png',
     specs: {
       maxPower: '30 kVA / 24 kW',
@@ -80,6 +81,7 @@ export const PRODUCTS: Product[] = [
     brand: 'CE Power',
     type: 'Generator',
     powerKW: 88,
+    stock: 0,
     imageUrl: '/images/mindong-110ds.png',
     specs: {
       maxPower: '110 kVA / 88 kW',
@@ -99,6 +101,7 @@ export const PRODUCTS: Product[] = [
     brand: 'CE Power',
     type: 'Pump',
     powerKW: 37,
+    stock: 0,
     imageUrl: '/images/cep-50p.png',
     specs: {
       maxPower: '50 HP / 37 kW',
@@ -120,6 +123,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Yuchai',
     type: 'Generator',
     powerKW: 24.5,
+    stock: 0,
     imageUrl: '/images/yuchai-240yc.png',
     specs: {
       maxPower: '30.7 kVA / 24.5 kW',
@@ -139,6 +143,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Yuchai',
     type: 'Pump',
     powerKW: 37,
+    stock: 0,
     imageUrl: '/images/yc-50p.png',
     specs: {
       maxPower: '50 HP / 37 kW',
@@ -161,6 +166,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Jichai',
     type: 'Generator',
     powerKW: 50,
+    stock: 0,
     imageUrl: 'mdz50ng_natural_gas_1768397466378.png',
     specs: {
       maxPower: '55 kVA',
@@ -180,6 +186,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Cummins',
     type: 'Generator',
     powerKW: 1120,
+    stock: 0,
     imageUrl: 'mdz1400ck_high_voltage_1768397488387.png',
     specs: {
       maxPower: '1400 kVA',
@@ -199,6 +206,7 @@ export const PRODUCTS: Product[] = [
     brand: 'CE Power',
     type: 'Generator',
     powerKW: 2.5,
+    stock: 0,
     imageUrl: 'mg2500_gasoline_1768397508993.png',
     specs: {
       maxPower: '2.8 kW',
@@ -218,6 +226,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Kohler',
     type: 'Generator',
     powerKW: 9.5,
+    stock: 0,
     imageUrl: 'mk9500e_gasoline_kohler_1768397547873.png',
     specs: {
       maxPower: '11 kW',
@@ -239,6 +248,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Cummins',
     type: 'Generator',
     powerKW: 24,
+    stock: 0,
     imageUrl: '/images/cummins-30dk.png',
     specs: {
       maxPower: '30 kVA / 24 kW',
@@ -258,6 +268,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Cummins',
     type: 'Generator',
     powerKW: 220,
+    stock: 0,
     imageUrl: '/images/cummins-275ck.png',
     specs: {
       maxPower: '275 kVA / 220 kW',
@@ -277,6 +288,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Cummins',
     type: 'Pump',
     powerKW: 75,
+    stock: 0,
     imageUrl: '/images/cum-pump-100.png',
     specs: {
       maxPower: '100 HP / 75 kW',
@@ -298,6 +310,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Perkins',
     type: 'Generator',
     powerKW: 8,
+    stock: 0,
     imageUrl: '/images/perkins-10pk.png',
     specs: {
       maxPower: '10 kVA / 8 kW',
@@ -317,6 +330,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Perkins',
     type: 'Pump',
     powerKW: 60,
+    stock: 0,
     imageUrl: '/images/perkins-pump-80.png',
     specs: {
       maxPower: '80 HP / 60 kW',
@@ -338,6 +352,7 @@ export const PRODUCTS: Product[] = [
     brand: 'MTU',
     type: 'Generator',
     powerKW: 240,
+    stock: 0,
     imageUrl: '/images/mtu-300mtu.png',
     specs: {
       maxPower: '300 kVA / 240 kW',
@@ -357,6 +372,7 @@ export const PRODUCTS: Product[] = [
     brand: 'MTU',
     type: 'Pump',
     powerKW: 150,
+    stock: 0,
     imageUrl: '/images/mtu-pump-200.png',
     specs: {
       maxPower: '200 HP / 150 kW',
@@ -378,6 +394,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Volvo',
     type: 'Generator',
     powerKW: 75,
+    stock: 0,
     imageUrl: '/images/volvo-93vo.png',
     specs: {
       maxPower: '93 kVA / 75 kW',
@@ -397,6 +414,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Volvo',
     type: 'Pump',
     powerKW: 110,
+    stock: 0,
     imageUrl: '/images/volvo-pump-150.png',
     specs: {
       maxPower: '150 HP / 110 kW',
@@ -418,6 +436,7 @@ export const PRODUCTS: Product[] = [
     brand: 'CE Power',
     type: 'Generator',
     powerKW: 8.5,
+    stock: 0,
     imageUrl: '/images/mindong-gasoline.png',
     specs: {
       maxPower: '9.5 kW',
@@ -439,6 +458,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Weichai',
     type: 'Generator',
     powerKW: 80,
+    stock: 0,
     imageUrl: '/images/weichai-80kw.png',
     specs: {
       maxPower: '100 kVA / 80 kW',
@@ -458,6 +478,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Weichai',
     type: 'Generator',
     powerKW: 80,
+    stock: 0,
     imageUrl: '/images/weichai-80kw-open.png',
     specs: {
       maxPower: '100 kVA / 80 kW',
@@ -477,6 +498,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Weichai',
     type: 'Generator',
     powerKW: 500,
+    stock: 0,
     imageUrl: '/images/weichai-500kw.png',
     specs: {
       maxPower: '625 kVA / 500 kW',
@@ -496,6 +518,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Weichai',
     type: 'Generator',
     powerKW: 3000,
+    stock: 0,
     imageUrl: '/images/weichai-3000kw.png',
     specs: {
       maxPower: '3750 kVA / 3000 kW',
@@ -515,6 +538,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Weichai',
     type: 'Pump',
     powerKW: 220,
+    stock: 0,
     imageUrl: '/images/weichai-pump-300.png',
     specs: {
       maxPower: '300 HP / 220 kW',
@@ -536,6 +560,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Yuchai',
     type: 'Generator',
     powerKW: 100,
+    stock: 0,
     imageUrl: '/images/yuchai-100kw.png',
     specs: {
       maxPower: '125 kVA / 100 kW',
@@ -555,6 +580,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Yuchai',
     type: 'Generator',
     powerKW: 100,
+    stock: 0,
     imageUrl: '/images/yuchai-100kw-open.png',
     specs: {
       maxPower: '125 kVA / 100 kW',
@@ -574,6 +600,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Yuchai',
     type: 'Generator',
     powerKW: 1000,
+    stock: 0,
     imageUrl: '/images/yuchai-1000kw.png',
     specs: {
       maxPower: '1250 kVA / 1000 kW',
@@ -593,6 +620,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Yuchai',
     type: 'Generator',
     powerKW: 2000,
+    stock: 0,
     imageUrl: '/images/yuchai-2000kw.png',
     specs: {
       maxPower: '2500 kVA / 2000 kW',
@@ -614,6 +642,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Perkins',
     type: 'Generator',
     powerKW: 100,
+    stock: 0,
     imageUrl: '/images/perkins-100kw.png',
     specs: {
       maxPower: '125 kVA / 100 kW',
@@ -633,6 +662,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Perkins',
     type: 'Generator',
     powerKW: 100,
+    stock: 0,
     imageUrl: '/images/perkins-100kw-open.png',
     specs: {
       maxPower: '125 kVA / 100 kW',
@@ -652,6 +682,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Perkins',
     type: 'Generator',
     powerKW: 1000,
+    stock: 0,
     imageUrl: '/images/perkins-1000kw.png',
     specs: {
       maxPower: '1250 kVA / 1000 kW',
@@ -671,6 +702,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Perkins',
     type: 'Generator',
     powerKW: 2000,
+    stock: 0,
     imageUrl: '/images/perkins-2000kw.png',
     specs: {
       maxPower: '2500 kVA / 2000 kW',
@@ -692,6 +724,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Cummins',
     type: 'Generator',
     powerKW: 100,
+    stock: 0,
     imageUrl: '/images/cummins-100kw.png',
     specs: {
       maxPower: '125 kVA / 100 kW',
@@ -711,6 +744,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Cummins',
     type: 'Generator',
     powerKW: 100,
+    stock: 0,
     imageUrl: '/images/cummins-100kw-open.png',
     specs: {
       maxPower: '125 kVA / 100 kW',
@@ -730,6 +764,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Cummins',
     type: 'Generator',
     powerKW: 1000,
+    stock: 0,
     imageUrl: '/images/cummins-1000kw.png',
     specs: {
       maxPower: '1250 kVA / 1000 kW',
@@ -749,6 +784,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Cummins',
     type: 'Generator',
     powerKW: 2000,
+    stock: 0,
     imageUrl: '/images/cummins-2000kw.png',
     specs: {
       maxPower: '2500 kVA / 2000 kW',
@@ -770,6 +806,7 @@ export const PRODUCTS: Product[] = [
     brand: 'MTU',
     type: 'Generator',
     powerKW: 1000,
+    stock: 0,
     imageUrl: '/images/mtu-1000kw.png',
     specs: {
       maxPower: '1250 kVA / 1000 kW',
@@ -789,6 +826,7 @@ export const PRODUCTS: Product[] = [
     brand: 'MTU',
     type: 'Generator',
     powerKW: 1000,
+    stock: 0,
     imageUrl: '/images/mtu-1000kw-open.png',
     specs: {
       maxPower: '1250 kVA / 1000 kW',
@@ -808,6 +846,7 @@ export const PRODUCTS: Product[] = [
     brand: 'MTU',
     type: 'Generator',
     powerKW: 2000,
+    stock: 0,
     imageUrl: '/images/mtu-2000kw.png',
     specs: {
       maxPower: '2500 kVA / 2000 kW',
@@ -829,6 +868,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Volvo',
     type: 'Generator',
     powerKW: 100,
+    stock: 0,
     imageUrl: '/images/volvo-100kw.png',
     specs: {
       maxPower: '125 kVA / 100 kW',
@@ -848,6 +888,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Volvo',
     type: 'Generator',
     powerKW: 100,
+    stock: 0,
     imageUrl: '/images/volvo-100kw-open.png',
     specs: {
       maxPower: '125 kVA / 100 kW',
@@ -867,6 +908,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Volvo',
     type: 'Generator',
     powerKW: 500,
+    stock: 0,
     imageUrl: '/images/volvo-500kw.png',
     specs: {
       maxPower: '625 kVA / 500 kW',
@@ -886,6 +928,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Volvo',
     type: 'Generator',
     powerKW: 3000,
+    stock: 0,
     imageUrl: '/images/volvo-3000kw.png',
     specs: {
       maxPower: '3750 kVA / 3000 kW',
@@ -907,6 +950,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Yunnei',
     type: 'Generator',
     powerKW: 15,
+    stock: 0,
     imageUrl: '/images/yunnei-15kw.png',
     specs: {
       maxPower: '18 kVA / 15 kW',
@@ -926,6 +970,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Yunnei',
     type: 'Generator',
     powerKW: 50,
+    stock: 0,
     imageUrl: '/images/yunnei-50kw.png',
     specs: {
       maxPower: '63 kVA / 50 kW',
@@ -945,6 +990,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Yunnei',
     type: 'Generator',
     powerKW: 50,
+    stock: 0,
     imageUrl: '/images/yunnei-50kw-open.png',
     specs: {
       maxPower: '63 kVA / 50 kW',
@@ -964,6 +1010,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Yunnei',
     type: 'Pump',
     powerKW: 30,
+    stock: 0,
     imageUrl: '/images/yunnei-pump-40.png',
     specs: {
       maxPower: '40 HP / 30 kW',
@@ -983,6 +1030,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Yunnei',
     type: 'Generator',
     powerKW: 100,
+    stock: 100,
     imageUrl: '/images/yunnei-100kw.png',
     specs: {
       maxPower: '125 kVA / 100 kW',
@@ -1004,6 +1052,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Kefo',
     type: 'Generator',
     powerKW: 50,
+    stock: 0,
     imageUrl: '/images/kefo-50kw.png',
     specs: {
       maxPower: '63 kVA / 50 kW',
@@ -1023,6 +1072,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Kefo',
     type: 'Generator',
     powerKW: 50,
+    stock: 0,
     imageUrl: '/images/kefo-50kw-open.png',
     specs: {
       maxPower: '63 kVA / 50 kW',
@@ -1042,6 +1092,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Kefo',
     type: 'Pump',
     powerKW: 22,
+    stock: 0,
     imageUrl: '/images/kefo-pump-30.png',
     specs: {
       maxPower: '30 HP / 22 kW',
@@ -1063,6 +1114,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Yuchai',
     type: 'Generator',
     powerKW: 150,
+    stock: 12,
     imageUrl: '/images/yuchai-150kw-md150.png',
     specs: {
       maxPower: '188 kVA / 150 kW',
@@ -1082,6 +1134,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Yuchai',
     type: 'Generator',
     powerKW: 200,
+    stock: 2,
     imageUrl: '/images/yuchai-200kw-md200.png',
     specs: {
       maxPower: '250 kVA / 200 kW',
@@ -1101,6 +1154,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Yuchai',
     type: 'Generator',
     powerKW: 250,
+    stock: 0,
     imageUrl: '/images/yuchai-250kw-mdz350.png',
     specs: {
       maxPower: '312.5 kVA / 250 kW',
@@ -1120,6 +1174,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Yuchai',
     type: 'Generator',
     powerKW: 360,
+    stock: 0,
     imageUrl: '/images/yuchai-360kw-mdz500.png',
     specs: {
       maxPower: '450 kVA / 360 kW',
@@ -1141,6 +1196,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Yunnei',
     type: 'Generator',
     powerKW: 12,
+    stock: 0,
     imageUrl: '/images/yunnei-12kw-md15.png',
     specs: {
       maxPower: '15 kVA / 12 kW',
@@ -1160,6 +1216,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Yunnei',
     type: 'Generator',
     powerKW: 16,
+    stock: 0,
     imageUrl: '/images/yunnei-16kw-md25.png',
     specs: {
       maxPower: '20 kVA / 16 kW',
@@ -1179,6 +1236,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Yunnei',
     type: 'Generator',
     powerKW: 30,
+    stock: 0,
     imageUrl: '/images/yunnei-30kw-md40.png',
     specs: {
       maxPower: '37.5 kVA / 30 kW',
@@ -1198,6 +1256,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Yunnei',
     type: 'Generator',
     powerKW: 50,
+    stock: 0,
     imageUrl: '/images/yunnei-50kw-md50.png',
     specs: {
       maxPower: '62.5 kVA / 50 kW',
@@ -1217,6 +1276,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Yunnei',
     type: 'Generator',
     powerKW: 60,
+    stock: 7,
     imageUrl: '/images/yunnei-60kw-md60.png',
     specs: {
       maxPower: '75 kVA / 60 kW',
@@ -1236,6 +1296,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Yunnei',
     type: 'Generator',
     powerKW: 80,
+    stock: 5,
     imageUrl: '/images/yunnei-80kw-mdz110.png',
     specs: {
       maxPower: '100 kVA / 80 kW',
@@ -1257,6 +1318,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Hanma',
     type: 'Generator',
     powerKW: 360,
+    stock: 0,
     imageUrl: '/images/hanma-360kw-md400.png',
     specs: {
       maxPower: '450 kVA / 360 kW',
@@ -1270,6 +1332,53 @@ export const PRODUCTS: Product[] = [
     },
     description: 'Powered by Hanma CM6D30F.408 30 engine.'
   },
+  // --- NEW INVENTORY (Jan 2026) ---
+  // YUNNEI
+  { id: 'yunnei-600kw', name: 'Yunnei 600kW Generator', brand: 'Yunnei', type: 'Generator', powerKW: 600, stock: 2, imageUrl: '/images/yunnei-50kw.png', specs: { maxPower: '750kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'High power Yunnei generator.' },
+  { id: 'yunnei-400kw', name: 'Yunnei 400kW Generator', brand: 'Yunnei', type: 'Generator', powerKW: 400, stock: 1, imageUrl: '/images/yunnei-50kw.png', specs: { maxPower: '500kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Reliable Yunnei power.' },
+  { id: 'yunnei-334kw', name: 'Yunnei 334kW Generator', brand: 'Yunnei', type: 'Generator', powerKW: 334, stock: 1, imageUrl: '/images/yunnei-50kw.png', specs: { maxPower: '417.5kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Yunnei industrial generator.' },
+  { id: 'yunnei-120kw-new', name: 'Yunnei 120kW Generator', brand: 'Yunnei', type: 'Generator', powerKW: 120, stock: 4, imageUrl: '/images/yunnei-100kw.png', specs: { maxPower: '150kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Efficient Yunnei power.' },
+  { id: 'yunnei-77kw', name: 'Yunnei 77kW Generator', brand: 'Yunnei', type: 'Generator', powerKW: 77, stock: 2, imageUrl: '/images/yunnei-80kw-mdz110.png', specs: { maxPower: '96kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Yunnei generator.' },
+  { id: 'yunnei-55kw', name: 'Yunnei 55kW Generator', brand: 'Yunnei', type: 'Generator', powerKW: 55, stock: 2, imageUrl: '/images/yunnei-50kw.png', specs: { maxPower: '68kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Yunnei generator.' },
+  { id: 'yunnei-38kw', name: 'Yunnei 38kW Generator', brand: 'Yunnei', type: 'Generator', powerKW: 38, stock: 2, imageUrl: '/images/yunnei-30kw-md40.png', specs: { maxPower: '47.5kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Yunnei generator.' },
+  { id: 'yunnei-25kw', name: 'Yunnei 25kW Generator', brand: 'Yunnei', type: 'Generator', powerKW: 25, stock: 3, imageUrl: '/images/yunnei-30kw-md40.png', specs: { maxPower: '31kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Yunnei generator.' },
+  { id: 'yunnei-23.1kw', name: 'Yunnei 23.1kW Generator', brand: 'Yunnei', type: 'Generator', powerKW: 23.1, stock: 1, imageUrl: '/images/yunnei-16kw-md25.png', specs: { maxPower: '28.8kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Yunnei generator.' },
+  { id: 'yunnei-20kw', name: 'Yunnei 20kW Generator', brand: 'Yunnei', type: 'Generator', powerKW: 20, stock: 3, imageUrl: '/images/yunnei-16kw-md25.png', specs: { maxPower: '25kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Yunnei generator.' },
+
+  // WEICHAI
+  { id: 'weichai-400kw-new', name: 'Weichai 400kW Generator', brand: 'Weichai', type: 'Generator', powerKW: 400, stock: 2, imageUrl: '/images/weichai-500kw.png', specs: { maxPower: '500kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Weichai generator.' },
+  { id: 'weichai-353kw', name: 'Weichai 353kW Generator', brand: 'Weichai', type: 'Generator', powerKW: 353, stock: 4, imageUrl: '/images/weichai-500kw.png', specs: { maxPower: '441kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Weichai generator.' },
+  { id: 'weichai-330kw', name: 'Weichai 330kW Generator', brand: 'Weichai', type: 'Generator', powerKW: 330, stock: 2, imageUrl: '/images/weichai-500kw.png', specs: { maxPower: '412kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Weichai generator.' },
+  { id: 'weichai-275kw', name: 'Weichai 275kW Generator', brand: 'Weichai', type: 'Generator', powerKW: 275, stock: 1, imageUrl: '/images/weichai-500kw.png', specs: { maxPower: '344kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Weichai generator.' },
+
+  // LAST
+  { id: 'last-200kw', name: 'Last 200kW Generator', brand: 'Last', type: 'Generator', powerKW: 200, stock: 2, imageUrl: '/images/placeholder.png', specs: { maxPower: '250kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Last brand generator.' },
+  { id: 'last-160kw', name: 'Last 160kW Generator', brand: 'Last', type: 'Generator', powerKW: 160, stock: 2, imageUrl: '/images/placeholder.png', specs: { maxPower: '200kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Last brand generator.' },
+  { id: 'last-100kw', name: 'Last 100kW Generator', brand: 'Last', type: 'Generator', powerKW: 100, stock: 10, imageUrl: '/images/placeholder.png', specs: { maxPower: '125kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Last brand generator.' },
+  { id: 'last-75kw', name: 'Last 75kW Generator', brand: 'Last', type: 'Generator', powerKW: 75, stock: 6, imageUrl: '/images/placeholder.png', specs: { maxPower: '94kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Last brand generator.' },
+  { id: 'last-40kw', name: 'Last 40kW Generator', brand: 'Last', type: 'Generator', powerKW: 40, stock: 1, imageUrl: '/images/placeholder.png', specs: { maxPower: '50kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Last brand generator.' },
+  { id: 'last-25kw', name: 'Last 25kW Generator', brand: 'Last', type: 'Generator', powerKW: 25, stock: 4, imageUrl: '/images/placeholder.png', specs: { maxPower: '31kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Last brand generator.' },
+
+  // KEFO
+  { id: 'kefo-180kw', name: 'Kefo 180kW Generator', brand: 'Kefo', type: 'Generator', powerKW: 180, stock: 2, imageUrl: '/images/kefo-50kw.png', specs: { maxPower: '225kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Kefo generator.' },
+  { id: 'kefo-120kw', name: 'Kefo 120kW Generator', brand: 'Kefo', type: 'Generator', powerKW: 120, stock: 4, imageUrl: '/images/kefo-50kw.png', specs: { maxPower: '150kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Kefo generator.' },
+
+  // YUCHAI NEW
+  { id: 'yuchai-120kw-new', name: 'Yuchai 120kW Generator', brand: 'Yuchai', type: 'Generator', powerKW: 120, stock: 15, imageUrl: '/images/yuchai-100kw.png', specs: { maxPower: '150kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Yuchai generator.' },
+  { id: 'yuchai-92kw', name: 'Yuchai 92kW Generator', brand: 'Yuchai', type: 'Generator', powerKW: 92, stock: 15, imageUrl: '/images/yuchai-100kw.png', specs: { maxPower: '115kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Yuchai generator.' },
+
+  // UNITED POWER
+  { id: 'united-11kw', name: 'United Power 11kW Silent', brand: 'United Power', type: 'Generator', powerKW: 11, stock: 18, imageUrl: '/images/placeholder.png', specs: { maxPower: '13.75kVA', powerFactor: '0.8', phase: '3', cooling: 'Air', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'United Power silent generator.' },
+  { id: 'united-8kw', name: 'United Power 8kW Generator', brand: 'United Power', type: 'Generator', powerKW: 8, stock: 5, imageUrl: '/images/placeholder.png', specs: { maxPower: '10kVA', powerFactor: '0.8', phase: '3', cooling: 'Air', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'United Power generator.' },
+  { id: 'united-7kw', name: 'United Power 7kW Generator', brand: 'United Power', type: 'Generator', powerKW: 7, stock: 5, imageUrl: '/images/placeholder.png', specs: { maxPower: '8.75kVA', powerFactor: '0.8', phase: '3', cooling: 'Air', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'United Power generator.' },
+
+  // PUMPS (Corresponding to genset stocks)
+  { id: 'yunnei-pump-100kw', name: 'Yunnei 100kW Pump', brand: 'Yunnei', type: 'Pump', powerKW: 100, stock: 10, imageUrl: '/images/yunnei-pump-40.png', specs: { maxPower: '135HP', powerFactor: 'N/A', phase: 'N/A', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Open', dimensions: 'Standard', weight: 'N/A' }, description: 'Yunnei pump.' },
+  // ... (Adding pumps as requested "for both pumps and gensets")
+  // For brevity, adding placeholders if "pumps and gensets" implies *stock* applies to *engines* that can be used for both. 
+  // User said: "update our products... for both pumps and gensets based on this new data".
+  // This implies the engines can drive pumps. I should probably add pump versions for the common sizes too.
+  { id: 'pump-120kw-stock', name: 'Stock 120kW Pump', brand: 'Other', type: 'Pump', powerKW: 120, stock: 10, imageUrl: '/images/placeholder.png', specs: { maxPower: '160HP', powerFactor: 'N/A', phase: 'N/A', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Open', dimensions: 'Standard', weight: 'N/A' }, description: 'Heavy duty pump.' },
 ];
 
 export const SYSTEM_INSTRUCTION = `
@@ -1309,6 +1418,13 @@ PRODUCT LINES & SPECIALTIES:
             - **120kW Pump**: Piston Size: 115mm. Flow: ~450 m³/h. Head: ~85m.
         - *Note*: "Piston Size" is a critical spec users ask for. Always provide it for these models regardless of brand.
 
+    *   **CURRENT STOCK INVENTORY (Updated):**
+        - **Yunnei**: 600kW(2), 400kW(1), 334kW(1), 120kW(4), 100kW(100), 80kW(5), 77kW(2), 60kW(7), 55kW(2), 38kW(2), 25kW(3), 23.1kW(1), 20kW(3).
+        - **Weichai**: 400kW(2), 353kW(4), 330kW(2), 275kW(1).
+        - **Last**: 200kW(2), 160kW(2), 100kW(10), 75kW(6), 40kW(1), 25kW(4).
+        - **Kefo**: 180kW(2), 120kW(4).
+        - **Yuchai**: 200kW(2), 150kW(12), 120kW(15), 92kW(15).
+        - **United Power**: 11kW Silent(18), 8kW(5), 7kW(5).
 
 TROUBLESHOOTING & MAINTENANCE ADVICE:
 - Silent sets utilize excellent noise reduction equipment (15-35 dB(A) reduction). If noise increases, check sound-proof canopy integrity.

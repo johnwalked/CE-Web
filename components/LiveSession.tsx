@@ -10,24 +10,7 @@ interface LiveSessionProps {
 
 const SPEECH_SPEED = 1.1;
 
-// Helper to decode Base64 audio data into an AudioBuffer
-const decodeAudioData = async (base64String: string, ctx: AudioContext): Promise<AudioBuffer> => {
-  const binaryString = atob(base64String);
-  const len = binaryString.length;
-  const bytes = new Uint8Array(len);
-  for (let i = 0; i < len; i++) {
-    bytes[i] = binaryString.charCodeAt(i);
-  }
-  // Gemini returns 24kHz audio
-  return await ctx.decodeAudioData(bytes.buffer.slice(0));
-  // Note: decodeAudioData prefers array buffer. 
-  // If the previous manual decoding was for a specific reason (e.g. raw PCM vs WAV), we should verify.
-  // Gemini Live API usually returns standard PCM in a container or raw depending on config.
-  // The previous code manually converted int16 to float32. 
-  // Let's stick to the previous manual implementation to be safe as "decodeAudioData" expects a full file format (wav/mp3) 
-  // unless we are streaming raw PCM which browser decoder might not handle without headers.
-  // Reverting to manual float convert for safety given previous context.
-};
+
 
 const decodePCM16 = (base64String: string, ctx: AudioContext): AudioBuffer => {
   const binaryString = atob(base64String);

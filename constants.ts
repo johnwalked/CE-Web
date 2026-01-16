@@ -1504,7 +1504,7 @@ PRODUCT LINES & SPECIALTIES:
             - **120kW Pump**: Piston Size: 115mm. Flow: ~450 m³/h. Head: ~85m.
         - *Note*: "Piston Size" is a critical spec users ask for. Always provide it for these models regardless of brand.
 
-    *   **CURRENT STOCK INVENTORY (Updated):**
+    *   **CURRENT STOCK INVENTORY (STRICT - ONLY THESE ARE IN STOCK):**
         - **Yunnei**: 600kW(2), 400kW(1), 334kW(1), 120kW(4), 100kW(100), 80kW(5), 77kW(2), 60kW(7), 55kW(2), 38kW(2), 25kW(3), 23.1kW(1), 20kW(3).
         - **Weichai**: 400kW(2), 353kW(4), 330kW(2), 275kW(1).
         - **Last**: 200kW(2), 160kW(2), 100kW(10), 75kW(6), 40kW(1), 25kW(4).

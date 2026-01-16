@@ -1334,9 +1334,9 @@ export const PRODUCTS: Product[] = [
   },
   // --- NEW INVENTORY (Jan 2026) ---
   // YUNNEI
-  { id: 'yunnei-600kw', name: 'Yunnei 600kW Generator', brand: 'Yunnei', type: 'Generator', powerKW: 600, stock: 2, imageUrl: '/images/yunnei-50kw.png', specs: { maxPower: '750kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'High power Yunnei generator.' },
-  { id: 'yunnei-400kw', name: 'Yunnei 400kW Generator', brand: 'Yunnei', type: 'Generator', powerKW: 400, stock: 1, imageUrl: '/images/yunnei-50kw.png', specs: { maxPower: '500kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Reliable Yunnei power.' },
-  { id: 'yunnei-334kw', name: 'Yunnei 334kW Generator', brand: 'Yunnei', type: 'Generator', powerKW: 334, stock: 1, imageUrl: '/images/yunnei-50kw.png', specs: { maxPower: '417.5kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Yunnei industrial generator.' },
+  { id: 'yunnei-600kw', name: 'Yunnei 600kW Generator', brand: 'Yunnei', type: 'Generator', powerKW: 600, stock: 2, imageUrl: '/images/yunnei-large-stock.png', specs: { maxPower: '750kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'High power Yunnei generator.' },
+  { id: 'yunnei-400kw', name: 'Yunnei 400kW Generator', brand: 'Yunnei', type: 'Generator', powerKW: 400, stock: 1, imageUrl: '/images/yunnei-large-stock.png', specs: { maxPower: '500kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Reliable Yunnei power.' },
+  { id: 'yunnei-334kw', name: 'Yunnei 334kW Generator', brand: 'Yunnei', type: 'Generator', powerKW: 334, stock: 1, imageUrl: '/images/yunnei-large-stock.png', specs: { maxPower: '417.5kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Yunnei industrial generator.' },
   { id: 'yunnei-120kw-new', name: 'Yunnei 120kW Generator', brand: 'Yunnei', type: 'Generator', powerKW: 120, stock: 4, imageUrl: '/images/yunnei-100kw.png', specs: { maxPower: '150kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Efficient Yunnei power.' },
   { id: 'yunnei-77kw', name: 'Yunnei 77kW Generator', brand: 'Yunnei', type: 'Generator', powerKW: 77, stock: 2, imageUrl: '/images/yunnei-80kw-mdz110.png', specs: { maxPower: '96kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Yunnei generator.' },
   { id: 'yunnei-55kw', name: 'Yunnei 55kW Generator', brand: 'Yunnei', type: 'Generator', powerKW: 55, stock: 2, imageUrl: '/images/yunnei-50kw.png', specs: { maxPower: '68kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Yunnei generator.' },
@@ -1352,25 +1352,25 @@ export const PRODUCTS: Product[] = [
   { id: 'weichai-275kw', name: 'Weichai 275kW Generator', brand: 'Weichai', type: 'Generator', powerKW: 275, stock: 1, imageUrl: '/images/weichai-500kw.png', specs: { maxPower: '344kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Weichai generator.' },
 
   // LAST
-  { id: 'last-200kw', name: 'Last 200kW Generator', brand: 'Last', type: 'Generator', powerKW: 200, stock: 2, imageUrl: '/images/placeholder.png', specs: { maxPower: '250kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Last brand generator.' },
-  { id: 'last-160kw', name: 'Last 160kW Generator', brand: 'Last', type: 'Generator', powerKW: 160, stock: 2, imageUrl: '/images/placeholder.png', specs: { maxPower: '200kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Last brand generator.' },
-  { id: 'last-100kw', name: 'Last 100kW Generator', brand: 'Last', type: 'Generator', powerKW: 100, stock: 10, imageUrl: '/images/placeholder.png', specs: { maxPower: '125kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Last brand generator.' },
-  { id: 'last-75kw', name: 'Last 75kW Generator', brand: 'Last', type: 'Generator', powerKW: 75, stock: 6, imageUrl: '/images/placeholder.png', specs: { maxPower: '94kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Last brand generator.' },
-  { id: 'last-40kw', name: 'Last 40kW Generator', brand: 'Last', type: 'Generator', powerKW: 40, stock: 1, imageUrl: '/images/placeholder.png', specs: { maxPower: '50kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Last brand generator.' },
-  { id: 'last-25kw', name: 'Last 25kW Generator', brand: 'Last', type: 'Generator', powerKW: 25, stock: 4, imageUrl: '/images/placeholder.png', specs: { maxPower: '31kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Last brand generator.' },
+  { id: 'last-200kw', name: 'Last 200kW Generator', brand: 'Last', type: 'Generator', powerKW: 200, stock: 2, imageUrl: '/images/last-brand-silent.png', specs: { maxPower: '250kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Last brand generator.' },
+  { id: 'last-160kw', name: 'Last 160kW Generator', brand: 'Last', type: 'Generator', powerKW: 160, stock: 2, imageUrl: '/images/last-brand-silent.png', specs: { maxPower: '200kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Last brand generator.' },
+  { id: 'last-100kw', name: 'Last 100kW Generator', brand: 'Last', type: 'Generator', powerKW: 100, stock: 10, imageUrl: '/images/last-brand-silent.png', specs: { maxPower: '125kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Last brand generator.' },
+  { id: 'last-75kw', name: 'Last 75kW Generator', brand: 'Last', type: 'Generator', powerKW: 75, stock: 6, imageUrl: '/images/last-brand-silent.png', specs: { maxPower: '94kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Last brand generator.' },
+  { id: 'last-40kw', name: 'Last 40kW Generator', brand: 'Last', type: 'Generator', powerKW: 40, stock: 1, imageUrl: '/images/last-brand-silent.png', specs: { maxPower: '50kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Last brand generator.' },
+  { id: 'last-25kw', name: 'Last 25kW Generator', brand: 'Last', type: 'Generator', powerKW: 25, stock: 4, imageUrl: '/images/last-brand-silent.png', specs: { maxPower: '31kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Last brand generator.' },
 
   // KEFO
-  { id: 'kefo-180kw', name: 'Kefo 180kW Generator', brand: 'Kefo', type: 'Generator', powerKW: 180, stock: 2, imageUrl: '/images/kefo-50kw.png', specs: { maxPower: '225kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Kefo generator.' },
-  { id: 'kefo-120kw', name: 'Kefo 120kW Generator', brand: 'Kefo', type: 'Generator', powerKW: 120, stock: 4, imageUrl: '/images/kefo-50kw.png', specs: { maxPower: '150kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Kefo generator.' },
+  { id: 'kefo-180kw', name: 'Kefo 180kW Generator', brand: 'Kefo', type: 'Generator', powerKW: 180, stock: 2, imageUrl: '/images/kefo-large-silent.png', specs: { maxPower: '225kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Kefo generator.' },
+  { id: 'kefo-120kw', name: 'Kefo 120kW Generator', brand: 'Kefo', type: 'Generator', powerKW: 120, stock: 4, imageUrl: '/images/kefo-large-silent.png', specs: { maxPower: '150kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Kefo generator.' },
 
   // YUCHAI NEW
   { id: 'yuchai-120kw-new', name: 'Yuchai 120kW Generator', brand: 'Yuchai', type: 'Generator', powerKW: 120, stock: 15, imageUrl: '/images/yuchai-100kw.png', specs: { maxPower: '150kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Yuchai generator.' },
   { id: 'yuchai-92kw', name: 'Yuchai 92kW Generator', brand: 'Yuchai', type: 'Generator', powerKW: 92, stock: 15, imageUrl: '/images/yuchai-100kw.png', specs: { maxPower: '115kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Yuchai generator.' },
 
   // UNITED POWER
-  { id: 'united-11kw', name: 'United Power 11kW Silent', brand: 'United Power', type: 'Generator', powerKW: 11, stock: 18, imageUrl: '/images/placeholder.png', specs: { maxPower: '13.75kVA', powerFactor: '0.8', phase: '3', cooling: 'Air', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'United Power silent generator.' },
-  { id: 'united-8kw', name: 'United Power 8kW Generator', brand: 'United Power', type: 'Generator', powerKW: 8, stock: 5, imageUrl: '/images/placeholder.png', specs: { maxPower: '10kVA', powerFactor: '0.8', phase: '3', cooling: 'Air', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'United Power generator.' },
-  { id: 'united-7kw', name: 'United Power 7kW Generator', brand: 'United Power', type: 'Generator', powerKW: 7, stock: 5, imageUrl: '/images/placeholder.png', specs: { maxPower: '8.75kVA', powerFactor: '0.8', phase: '3', cooling: 'Air', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'United Power generator.' },
+  { id: 'united-11kw', name: 'United Power 11kW Silent', brand: 'United Power', type: 'Generator', powerKW: 11, stock: 18, imageUrl: '/images/united-power-silent.png', specs: { maxPower: '13.75kVA', powerFactor: '0.8', phase: '3', cooling: 'Air', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'United Power silent generator.' },
+  { id: 'united-8kw', name: 'United Power 8kW Generator', brand: 'United Power', type: 'Generator', powerKW: 8, stock: 5, imageUrl: '/images/united-power-silent.png', specs: { maxPower: '10kVA', powerFactor: '0.8', phase: '3', cooling: 'Air', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'United Power generator.' },
+  { id: 'united-7kw', name: 'United Power 7kW Generator', brand: 'United Power', type: 'Generator', powerKW: 7, stock: 5, imageUrl: '/images/united-power-silent.png', specs: { maxPower: '8.75kVA', powerFactor: '0.8', phase: '3', cooling: 'Air', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'United Power generator.' },
 
   // PUMPS (Corresponding to genset stocks)
   { id: 'yunnei-pump-100kw', name: 'Yunnei 100kW Pump', brand: 'Yunnei', type: 'Pump', powerKW: 100, stock: 10, imageUrl: '/images/yunnei-pump-40.png', specs: { maxPower: '135HP', powerFactor: 'N/A', phase: 'N/A', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Open', dimensions: 'Standard', weight: 'N/A' }, description: 'Yunnei pump.' },
@@ -1378,7 +1378,69 @@ export const PRODUCTS: Product[] = [
   // For brevity, adding placeholders if "pumps and gensets" implies *stock* applies to *engines* that can be used for both. 
   // User said: "update our products... for both pumps and gensets based on this new data".
   // This implies the engines can drive pumps. I should probably add pump versions for the common sizes too.
-  { id: 'pump-120kw-stock', name: 'Stock 120kW Pump', brand: 'Other', type: 'Pump', powerKW: 120, stock: 10, imageUrl: '/images/placeholder.png', specs: { maxPower: '160HP', powerFactor: 'N/A', phase: 'N/A', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Open', dimensions: 'Standard', weight: 'N/A' }, description: 'Heavy duty pump.' },
+  { id: 'pump-120kw-stock', name: 'Stock 120kW Pump', brand: 'Other', type: 'Pump', powerKW: 120, stock: 10, imageUrl: '/images/pump-120kw-open.png', specs: { maxPower: '160HP', powerFactor: 'N/A', phase: 'N/A', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Open', dimensions: 'Standard', weight: 'N/A' }, description: 'Heavy duty pump.' },
+
+  // --- GOLD REFINEMENT SPECIALTIES ---
+  {
+    id: 'yuchai-6-piston-gold',
+    name: 'Yuchai 6-Piston Gold Refiner',
+    brand: 'Yuchai',
+    type: 'Generator',
+    powerKW: 200,
+    stock: 5,
+    imageUrl: '/images/yuchai-200kw-md200.png',
+    specs: {
+      maxPower: '250 kVA / 200 kW',
+      powerFactor: '0.8',
+      phase: '3 Phase',
+      cooling: 'Water Cooled',
+      fuelConsumption: 'Start 20L/hr',
+      noiseLevel: 'Silent / Heavy Duty',
+      dimensions: 'Standard Industrial',
+      weight: '2800 kg'
+    },
+    description: 'Specialized Yuchai 6-Piston engine generator designed for the continuous heavy load of gold refinement machinery. Extremely durable.'
+  },
+  {
+    id: 'yunnei-gold-mining',
+    name: 'Yunnei Gold Mining Edition',
+    brand: 'Yunnei',
+    type: 'Generator',
+    powerKW: 100,
+    stock: 8,
+    imageUrl: '/images/yunnei-100kw.png',
+    specs: {
+      maxPower: '125 kVA / 100 kW',
+      powerFactor: '0.8',
+      phase: '3 Phase',
+      cooling: 'Water Cooled',
+      fuelConsumption: 'Economic',
+      noiseLevel: 'Silent',
+      dimensions: 'Standard',
+      weight: '1300 kg'
+    },
+    description: 'Rugged Yunnei generator optimized for mining camps and washing plants.'
+  },
+  {
+    id: 'gold-slurry-pump-50',
+    name: 'Gold Refinement Slurry Pump',
+    brand: 'CE Power',
+    type: 'Pump',
+    powerKW: 45,
+    stock: 12,
+    imageUrl: '/images/cep-50p.png',
+    specs: {
+      maxPower: '60 HP / 45 kW',
+      powerFactor: 'N/A',
+      phase: 'N/A',
+      cooling: 'Water Cooled',
+      fuelConsumption: 'N/A',
+      noiseLevel: 'Industrial',
+      dimensions: 'Heavy Duty',
+      weight: '600 kg'
+    },
+    description: 'High-head water pump designed specifically for gold washing and refinement processes. Capable of handling silty water.'
+  }
 ];
 
 export const SYSTEM_INSTRUCTION = `
@@ -1410,6 +1472,12 @@ PRODUCT LINES & SPECIALTIES:
 - Containerized Generators: 20ft (below 1250kVA) and 40ft (above 1250kVA) standard containers.
 - Natural Gas Generators: Powered by Cummins or Jichai series engines. Precise ignition control (ECU).
 - Marine Generators: Specialized units for marine applications.
+    *   **GOLD REFINEMENT SPECIALIZATION:**
+        - **Target Audience**: Gold miners and refiners.
+        - **Key Needs**: High reliability, continuous operation, high head pumps for sluicing.
+        - **Recommendations**:
+            - **Generators**: Strongly recommend **Yuchai 6-Piston** series and **Yunnei** generators for their durability and power stability in mining conditions.
+            - **Pumps**: Highlight our specialized **Gold Refinement Water Pumps** (High Head, Slurry capable).
     *   **PUMP KNOWLEDGE BASE (Use Cases & Specs):**
         - **Use Cases**: Agricultural irrigation (flooding fields), Industrial de-watering (mining, construction sites), Flood control (emergency response), and Water supply transfer.
         - **Common Specs (90kW - 120kW Range)**:

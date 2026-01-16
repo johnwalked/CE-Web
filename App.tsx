@@ -1,4 +1,4 @@
-import React, { useState, useMemo, Suspense, lazy } from 'react';
+import React, { useState, useMemo, Suspense, lazy, useEffect } from 'react';
 import { Tab, ChatMessage, Language } from './types';
 import { Layout } from './components/Layout';
 import { AIAssistantOrb } from './components/AIAssistantOrb';
@@ -33,9 +33,18 @@ export default function App() {
   const [language, setLanguage] = useState<Language>(detectLanguage);
 
   // Optimization: Lift chat state so it persists between tab switches/orb toggles
-  const [chatMessages, setChatMessages] = useState<ChatMessage[]>([
-    { role: 'model', text: 'Hello! I am your AI for CE Generators and Pumps. We provide Weichai, Yuchai, Yunnei, Kefo, Perkins, Cummins generators and all kinds of pumps. Ask me anything in English, Amharic, Chinese, Tigrinya, or Oromifa.' }
-  ]);
+  // Persistent Memory: Load from localStorage if available
+  const [chatMessages, setChatMessages] = useState<ChatMessage[]>(() => {
+    const saved = localStorage.getItem('ce_chat_history');
+    return saved ? JSON.parse(saved) : [
+      { role: 'model', text: 'Hello! I am your AI for CE Generators and Pumps. We provide Weichai, Yuchai, Yunnei, Kefo, Perkins, Cummins generators and all kinds of pumps. Ask me anything in English, Amharic, Chinese, Tigrinya, or Oromifa.' }
+    ];
+  });
+
+  // Save chat history to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem('ce_chat_history', JSON.stringify(chatMessages));
+  }, [chatMessages]);
 
   // Handle tab change with smooth scroll to top
   const handleTabChange = (tab: Tab) => {

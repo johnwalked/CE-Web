@@ -1154,7 +1154,7 @@ export const PRODUCTS: Product[] = [
     brand: 'Yuchai',
     type: 'Generator',
     powerKW: 250,
-    stock: 0,
+    stock: 1,
     imageUrl: '/images/yuchai-250kw-mdz350.png',
     specs: {
       maxPower: '312.5 kVA / 250 kW',
@@ -1415,6 +1415,12 @@ export const PRODUCTS: Product[] = [
   { id: 'yuchai-120kw-pump-new', name: 'Yuchai 120kW Pump', brand: 'Yuchai', type: 'Pump', powerKW: 120, stock: 15, imageUrl: '/images/pump-120kw-open.png', specs: { maxPower: '160HP', powerFactor: 'N/A', phase: 'N/A', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Open', dimensions: 'Standard', weight: 'N/A' }, description: 'Yuchai pump.' },
   { id: 'yuchai-92kw-pump', name: 'Yuchai 92kW Pump', brand: 'Yuchai', type: 'Pump', powerKW: 92, stock: 15, imageUrl: '/images/pump-120kw-open.png', specs: { maxPower: '123HP', powerFactor: 'N/A', phase: 'N/A', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Open', dimensions: 'Standard', weight: 'N/A' }, description: 'Yuchai pump.' },
 
+  // YUCHAI HIGH-POWER PUMPS (Specialized Output)
+  { id: 'yuchai-150kw-pump-high', name: 'Yuchai 150kW Pump (High Output)', brand: 'Yuchai', type: 'Pump', powerKW: 176, stock: 12, imageUrl: '/images/pump-120kw-open.png', specs: { maxPower: '235HP', powerFactor: 'N/A', phase: 'N/A', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Open', dimensions: 'Standard', weight: 'N/A' }, description: 'High output Yuchai pump.' },
+  { id: 'yuchai-200kw-pump-high', name: 'Yuchai 200kW Pump (High Output)', brand: 'Yuchai', type: 'Pump', powerKW: 225, stock: 2, imageUrl: '/images/pump-120kw-open.png', specs: { maxPower: '300HP', powerFactor: 'N/A', phase: 'N/A', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Open', dimensions: 'Standard', weight: 'N/A' }, description: 'High output Yuchai pump.' },
+  { id: 'yuchai-250kw-pump-high', name: 'Yuchai 250kW Pump (High Output)', brand: 'Yuchai', type: 'Pump', powerKW: 280, stock: 1, imageUrl: '/images/pump-120kw-open.png', specs: { maxPower: '375HP', powerFactor: 'N/A', phase: 'N/A', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Open', dimensions: 'Standard', weight: 'N/A' }, description: 'High output Yuchai pump.' },
+
+
   // UNITED POWER PUMPS
   { id: 'united-11kw-pump', name: 'United Power 11kW Pump', brand: 'United Power', type: 'Pump', powerKW: 11, stock: 18, imageUrl: '/images/united-power-silent.png', specs: { maxPower: '15HP', powerFactor: 'N/A', phase: 'N/A', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Open', dimensions: 'Standard', weight: 'N/A' }, description: 'United Power pump.' },
   { id: 'united-8kw-pump', name: 'United Power 8kW Pump', brand: 'United Power', type: 'Pump', powerKW: 8, stock: 5, imageUrl: '/images/united-power-silent.png', specs: { maxPower: '10HP', powerFactor: 'N/A', phase: 'N/A', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Open', dimensions: 'Standard', weight: 'N/A' }, description: 'United Power pump.' },
@@ -1550,7 +1556,7 @@ PRODUCT LINES & SPECIALTIES:
         - **Weichai**: 400kW(2), 353kW(4), 330kW(2), 275kW(1).
         - **Last**: 200kW(2), 160kW(2), 100kW(10), 75kW(6), 40kW(1), 25kW(4).
         - **Kefo**: 180kW(2), 120kW(4).
-        - **Yuchai**: 200kW(2), 150kW(12), 120kW(15), 92kW(15).
+        - **Yuchai**: 250kW(1), 200kW(2), 150kW(12), 120kW(15), 92kW(15).
         - **United Power**: 11kW Silent(18), 8kW(5), 7kW(5).
 
 TROUBLESHOOTING & MAINTENANCE ADVICE:

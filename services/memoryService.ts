@@ -5,6 +5,7 @@
  */
 
 export interface UserProfile {
+    clientId?: string; // Persistent Device/IP Identifier
     name?: string;
     preferences?: {
         language?: string;
@@ -88,30 +89,39 @@ export const memoryService = {
 
     // --- Context Construction ---
 
-    /**
-     * Builds the context string to inject into the AI's system instruction.
-     */
     buildContextContext: (): string => {
         const profile = memoryService.getUserProfile();
         const history = memoryService.getConversationHistory();
 
-        const nameContext = profile.name ? `User's Name: ${profile.name}` : "User's Name: Unknown (Ask politely if relevant)";
+        // Ensure Client ID exists (simulating IP/Device tracking)
+        if (!profile.clientId) {
+            profile.clientId = crypto.randomUUID();
+            memoryService.saveUserProfile({ clientId: profile.clientId });
+        }
 
-        // Format last 3 conversations
-        const recentHistory = history.slice(0, 3).map(h =>
-            `- [${new Date(h.timestamp).toLocaleDateString()}]: ${h.summary}`
+        const nameContext = profile.name ? `User's Name: ${profile.name}` : "User's Name: Unknown";
+        const clientContext = `Client ID (Device/IP Memory): ${profile.clientId}`;
+
+        // Format last 5 conversations (increased from 3)
+        const recentHistory = history.slice(0, 5).map(h =>
+            `- [${new Date(h.timestamp).toLocaleString()}]: ${h.summary}`
         ).join('\n');
 
         const historyContext = recentHistory
-            ? `Recent Conversations:\n${recentHistory}`
-            : "No recent conversation history.";
+            ? `PAST CONVERSATION HISTORY (Use this to remember the user):\n${recentHistory}`
+            : "No previous conversation history found for this device.";
 
         return `
-[MEMORY & CONTEXT]
+[MEMORY SYSTEM - PERSISTENT CONTEXT]
+${clientContext}
 ${nameContext}
+
 ${historyContext}
-If the user's name is known, address them by it occasionally.
-Recall topics from recent conversations to provide continuity if the user references them.
+
+[INSTRUCTIONS FOR MEMORY USAGE]
+1. RECOGNIZE THE USER: If there is history above, acknowledge it naturally (e.g., "Welcome back! Last time we discussed [topic]...").
+2. CONTINUITY: If they asked about a specific product before, ask if they made a decision or need more info on it.
+3. ADAPTIVITY: If they preferred a specific language or style previously, adopt it immediately.
 `;
     }
 };

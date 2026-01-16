@@ -64,6 +64,7 @@ export const LiveSession: React.FC<LiveSessionProps> = ({ language }) => {
   const nextStartTimeRef = useRef<number>(0);
   const audioSourcesRef = useRef<Set<AudioBufferSourceNode>>(new Set());
   const transcriptionBufferRef = useRef<string>("");
+  const fullTranscriptRef = useRef<string>("");
 
   useEffect(() => {
     let mounted = true;
@@ -149,6 +150,7 @@ export const LiveSession: React.FC<LiveSessionProps> = ({ language }) => {
         },
         onTranscription: (text) => {
           transcriptionBufferRef.current += text;
+          fullTranscriptRef.current += text;
           const normalized = transcriptionBufferRef.current.replace(/\s/g, '');
           // Check for phone number sequences in any supported language format
           if (
@@ -211,11 +213,12 @@ export const LiveSession: React.FC<LiveSessionProps> = ({ language }) => {
     setIsConnecting(false);
     setShowContactToast(false);
 
-    // Save conversation attempt
-    if (transcriptionBufferRef.current.length > 10) {
-      memoryService.saveConversationAttempt(transcriptionBufferRef.current.substring(0, 200) + "...");
+    // Save conversation attempt (Save up to 5000 chars of history)
+    if (fullTranscriptRef.current.length > 10) {
+      memoryService.saveConversationAttempt(fullTranscriptRef.current.substring(0, 5000));
     }
     transcriptionBufferRef.current = "";
+    fullTranscriptRef.current = "";
   }, []);
 
   const copyToClipboard = () => {

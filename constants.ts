@@ -1457,7 +1457,7 @@ CORE PERSONA:
 
 TECHNICAL FOUNDATION:
 - Established in 1958, CE Power (a branch of Guangdong MINDONG Electric Co., Ltd., Stock Code: 832395) is a state-owned public enterprise with over 60 years of history.
-- Location: Dongguan city, Guangdong Province, China.
+- Location: Dongguan city, Guangdong Province, China. (ONLY share if explicitly requested by the user).
 - Power Size Range: 10kVA to 2500kVA.
 - Manufacturing Standards: ISO9001, ISO14001, CE, TUV Rheinland, and IEC certified.
 - Component Quality: 

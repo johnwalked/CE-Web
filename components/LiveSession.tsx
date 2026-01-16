@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { connectLive } from '../services/geminiService';
-import { memoryService } from '../services/memoryService';
 import { Mic, PhoneOff, Cog, Wifi, Loader2, Phone, Copy, Check, X as XIcon } from 'lucide-react';
 import { Language } from '../types';
 import { TRANSLATIONS } from '../constants';
@@ -64,7 +63,6 @@ export const LiveSession: React.FC<LiveSessionProps> = ({ language }) => {
   const nextStartTimeRef = useRef<number>(0);
   const audioSourcesRef = useRef<Set<AudioBufferSourceNode>>(new Set());
   const transcriptionBufferRef = useRef<string>("");
-  const fullTranscriptRef = useRef<string>("");
 
   useEffect(() => {
     let mounted = true;
@@ -150,7 +148,6 @@ export const LiveSession: React.FC<LiveSessionProps> = ({ language }) => {
         },
         onTranscription: (text) => {
           transcriptionBufferRef.current += text;
-          fullTranscriptRef.current += text;
           const normalized = transcriptionBufferRef.current.replace(/\s/g, '');
           // Check for phone number sequences in any supported language format
           if (
@@ -170,9 +167,7 @@ export const LiveSession: React.FC<LiveSessionProps> = ({ language }) => {
           setIsConnected(false);
           setIsConnecting(false);
         }
-      }, language, {
-        userContext: memoryService.buildContextContext()
-      });
+      }, language);
 
       liveClientRef.current = client;
       setIsConnected(true);
@@ -213,12 +208,7 @@ export const LiveSession: React.FC<LiveSessionProps> = ({ language }) => {
     setIsConnecting(false);
     setShowContactToast(false);
 
-    // Save conversation attempt (Save up to 5000 chars of history)
-    if (fullTranscriptRef.current.length > 10) {
-      memoryService.saveConversationAttempt(fullTranscriptRef.current.substring(0, 5000));
-    }
     transcriptionBufferRef.current = "";
-    fullTranscriptRef.current = "";
   }, []);
 
   const copyToClipboard = () => {

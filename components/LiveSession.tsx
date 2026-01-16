@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { connectLive } from '../services/geminiService';
-import { Mic, PhoneOff, Cog, Wifi, Loader2, Phone, Copy, Check, X as XIcon } from 'lucide-react';
+import { Mic, PhoneOff, Cog, Wifi, Loader2, Phone, Copy, Check, X as XIcon, Pause, Play } from 'lucide-react';
 import { Language } from '../types';
 import { TRANSLATIONS } from '../constants';
 
@@ -9,8 +9,6 @@ interface LiveSessionProps {
 }
 
 const SPEECH_SPEED = 1.1;
-
-
 
 const decodePCM16 = (base64String: string, ctx: AudioContext): AudioBuffer => {
   const binaryString = atob(base64String);
@@ -31,6 +29,7 @@ const decodePCM16 = (base64String: string, ctx: AudioContext): AudioBuffer => {
 export const LiveSession: React.FC<LiveSessionProps> = ({ language }) => {
   const [isConnected, setIsConnected] = useState(false);
   const [isConnecting, setIsConnecting] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [showContactToast, setShowContactToast] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -46,6 +45,14 @@ export const LiveSession: React.FC<LiveSessionProps> = ({ language }) => {
   const nextStartTimeRef = useRef<number>(0);
   const audioSourcesRef = useRef<Set<AudioBufferSourceNode>>(new Set());
   const transcriptionBufferRef = useRef<string>("");
+
+  // Ref for pause state to be accessible in audio processor
+  const isPausedRef = useRef(false);
+
+  // Sync state with ref
+  useEffect(() => {
+    isPausedRef.current = isPaused;
+  }, [isPaused]);
 
   useEffect(() => {
     let mounted = true;
@@ -67,6 +74,7 @@ export const LiveSession: React.FC<LiveSessionProps> = ({ language }) => {
     if (isConnecting || isConnected) return;
     setError(null);
     setIsConnecting(true);
+    setIsPaused(false);
 
     try {
       const stream = await navigator.mediaDevices.getUserMedia({
@@ -87,8 +95,11 @@ export const LiveSession: React.FC<LiveSessionProps> = ({ language }) => {
       const processor = inputCtx.createScriptProcessor(4096, 1, 1);
 
       processor.onaudioprocess = (e) => {
-        const inputData = e.inputBuffer.getChannelData(0);
-        liveClientRef.current?.sendAudio(inputData);
+        // Only send audio if NOT paused
+        if (!isPausedRef.current) {
+          const inputData = e.inputBuffer.getChannelData(0);
+          liveClientRef.current?.sendAudio(inputData);
+        }
       };
 
       source.connect(processor);
@@ -175,6 +186,19 @@ export const LiveSession: React.FC<LiveSessionProps> = ({ language }) => {
     nextStartTimeRef.current = 0;
   };
 
+  const togglePause = () => {
+    if (isPaused) {
+      // Resume
+      outputAudioContextRef.current?.resume();
+      setIsPaused(false);
+    } else {
+      // Pause
+      outputAudioContextRef.current?.suspend();
+      cancelPendingAudio(); // Stop current speech immediately
+      setIsPaused(true);
+    }
+  };
+
   const stopSession = useCallback(() => {
     liveClientRef.current?.close();
     liveClientRef.current = null;
@@ -189,6 +213,7 @@ export const LiveSession: React.FC<LiveSessionProps> = ({ language }) => {
 
     setIsConnected(false);
     setIsConnecting(false);
+    setIsPaused(false);
     setShowContactToast(false);
 
     transcriptionBufferRef.current = "";
@@ -211,23 +236,25 @@ export const LiveSession: React.FC<LiveSessionProps> = ({ language }) => {
       {/* Background Ambience */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <div className="absolute inset-0 bg-radial-at-c from-zinc-900 via-black to-black"></div>
-        <div className={`absolute bottom-[-50%] left-0 w-[200%] h-[150%] bg-yellow-900/10 rounded-[40%] animate-wave blur-[100px] ${isConnected ? 'opacity-100' : 'opacity-30'}`}></div>
-        <div className={`absolute bottom-[-50%] left-[-20%] w-[200%] h-[150%] bg-orange-900/10 rounded-[35%] animate-wave blur-[80px] animation-delay-2000 ${isConnected ? 'opacity-100' : 'opacity-30'}`} style={{ animationDelay: '-2s' }}></div>
+        <div className={`absolute bottom-[-50%] left-0 w-[200%] h-[150%] bg-yellow-900/10 rounded-[40%] animate-wave blur-[100px] ${isConnected && !isPaused ? 'opacity-100' : 'opacity-30'}`}></div>
+        <div className={`absolute bottom-[-50%] left-[-20%] w-[200%] h-[150%] bg-orange-900/10 rounded-[35%] animate-wave blur-[80px] animation-delay-2000 ${isConnected && !isPaused ? 'opacity-100' : 'opacity-30'}`} style={{ animationDelay: '-2s' }}></div>
       </div>
 
       {/* Main Content */}
       <div className="relative z-10 w-full max-w-4xl px-6 flex flex-col items-center gap-12">
-        <StatusHeader isConnected={isConnected} isConnecting={isConnecting} t={t} />
+        <StatusHeader isConnected={isConnected} isConnecting={isConnecting} isPaused={isPaused} t={t} />
 
         <div className="relative w-64 h-64 md:w-96 md:h-96 flex items-center justify-center">
-          <OrbVisualizer isConnected={isConnected} isConnecting={isConnecting} />
+          <OrbVisualizer isConnected={isConnected} isConnecting={isConnecting} isPaused={isPaused} />
         </div>
 
         <Controls
           isConnected={isConnected}
           isConnecting={isConnecting}
+          isPaused={isPaused}
           error={error}
           onToggle={isConnected ? stopSession : startSession}
+          onPause={togglePause}
           t={t}
         />
       </div>
@@ -259,42 +286,46 @@ const ContactToast = ({ onClose, onCopy, copied }: { onClose: () => void, onCopy
   </div>
 );
 
-const StatusHeader = ({ isConnected, isConnecting, t }: { isConnected: boolean, isConnecting: boolean, t: any }) => (
+const StatusHeader = ({ isConnected, isConnecting, isPaused, t }: { isConnected: boolean, isConnecting: boolean, isPaused: boolean, t: any }) => (
   <div className="text-center space-y-6">
-    <div className={`inline-flex items-center gap-2 px-5 py-2 rounded-full border text-xs font-mono uppercase tracking-widest transition-all ${isConnected ? 'bg-yellow-500/10 border-yellow-500/50 text-yellow-400' : 'bg-white/5 border-white/10 text-zinc-500'}`}>
-      <Wifi className={`w-3 h-3 ${isConnected ? 'animate-pulse' : ''}`} />
-      {isConnected ? t.live.connectionActive : (isConnecting ? 'Connecting...' : t.live.standby)}
+    <div className={`inline-flex items-center gap-2 px-5 py-2 rounded-full border text-xs font-mono uppercase tracking-widest transition-all ${isConnected ? (isPaused ? 'bg-orange-500/10 border-orange-500/50 text-orange-400' : 'bg-yellow-500/10 border-yellow-500/50 text-yellow-400') : 'bg-white/5 border-white/10 text-zinc-500'}`}>
+      <Wifi className={`w-3 h-3 ${isConnected && !isPaused ? 'animate-pulse' : ''}`} />
+      {isConnected ? (isPaused ? 'Session Paused' : t.live.connectionActive) : (isConnecting ? 'Connecting...' : t.live.standby)}
     </div>
     <h1 className={`text-4xl md:text-7xl font-black tracking-tighter transition-colors duration-500 uppercase ${isConnected ? 'text-white drop-shadow-[0_0_20px_rgba(234,179,8,0.3)]' : 'text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-700'}`}>
-      {isConnected ? t.live.listening : (isConnecting ? "Initializing..." : "Engine Expert")}
+      {isConnected ? (isPaused ? "Paused" : t.live.listening) : (isConnecting ? "Initializing..." : "Engine Expert")}
     </h1>
     <p className="text-lg md:text-xl text-zinc-400 max-w-lg mx-auto font-light leading-relaxed">
-      {isConnected ? t.live.desc_listening : t.live.desc_standby}
+      {isConnected ? (isPaused ? "Tap resume to continue conversation." : t.live.desc_listening) : t.live.desc_standby}
     </p>
   </div>
 );
 
-const OrbVisualizer = ({ isConnected, isConnecting }: { isConnected: boolean, isConnecting: boolean }) => (
+const OrbVisualizer = ({ isConnected, isConnecting, isPaused }: { isConnected: boolean, isConnecting: boolean, isPaused: boolean }) => (
   <>
     {(isConnected || isConnecting) && (
       <>
-        <div className={`absolute inset-0 bg-yellow-500/10 rounded-full blur-[80px] ${isConnected ? 'animate-pulse' : ''}`}></div>
-        <div className="absolute inset-0 border border-yellow-500/20 rounded-full animate-[spin_10s_linear_infinite]"></div>
-        <div className="absolute inset-4 border border-orange-500/20 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
+        <div className={`absolute inset-0 bg-yellow-500/10 rounded-full blur-[80px] ${isConnected && !isPaused ? 'animate-pulse' : 'opacity-20'}`}></div>
+        <div className={`absolute inset-0 border border-yellow-500/20 rounded-full ${isPaused ? 'rotate-12' : 'animate-[spin_10s_linear_infinite]'}`}></div>
+        <div className={`absolute inset-4 border border-orange-500/20 rounded-full ${isPaused ? '-rotate-12' : 'animate-[spin_15s_linear_infinite_reverse]'}`}></div>
       </>
     )}
     <div className="relative z-10 transition-transform duration-700 hover:scale-105">
-      <Cog className={`w-64 h-64 md:w-80 md:h-80 drop-shadow-2xl transition-all duration-1000 ${isConnected || isConnecting ? 'animate-spin text-yellow-500 opacity-90' : 'animate-spin-slow text-zinc-800 opacity-50'}`} strokeWidth={0.5} />
+      <Cog className={`w-64 h-64 md:w-80 md:h-80 drop-shadow-2xl transition-all duration-1000 ${isConnected || isConnecting ? (isPaused ? 'text-orange-500 opacity-80' : 'animate-spin text-yellow-500 opacity-90') : 'animate-spin-slow text-zinc-800 opacity-50'}`} strokeWidth={0.5} />
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className={`w-32 h-32 rounded-full flex items-center justify-center backdrop-blur-xl border border-white/10 shadow-inner transition-all duration-500 ${isConnected || isConnecting ? 'bg-yellow-500/20' : 'bg-black/50'}`}>
+        <div className={`w-32 h-32 rounded-full flex items-center justify-center backdrop-blur-xl border border-white/10 shadow-inner transition-all duration-500 ${isConnected || isConnecting ? (isPaused ? 'bg-orange-900/40 border-orange-500/30' : 'bg-yellow-500/20') : 'bg-black/50'}`}>
           {isConnecting ? (
             <Loader2 className="w-12 h-12 text-yellow-500 animate-spin" />
           ) : isConnected ? (
-            <div className="flex items-center justify-center gap-1.5 h-16 w-16">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <div key={i} className="w-1.5 bg-yellow-500 rounded-full animate-equalizer" style={{ animationDelay: `${i * 0.1}s`, animationDuration: `${0.8 + Math.random() * 0.5}s` }}></div>
-              ))}
-            </div>
+            isPaused ? (
+              <Pause className="w-12 h-12 text-orange-500" />
+            ) : (
+              <div className="flex items-center justify-center gap-1.5 h-16 w-16">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <div key={i} className="w-1.5 bg-yellow-500 rounded-full animate-equalizer" style={{ animationDelay: `${i * 0.1}s`, animationDuration: `${0.8 + Math.random() * 0.5}s` }}></div>
+                ))}
+              </div>
+            )
           ) : (
             <Mic className="w-12 h-12 text-zinc-500" />
           )}
@@ -304,7 +335,7 @@ const OrbVisualizer = ({ isConnected, isConnecting }: { isConnected: boolean, is
   </>
 );
 
-const Controls = ({ isConnected, isConnecting, error, onToggle, t }: { isConnected: boolean, isConnecting: boolean, error: string | null, onToggle: () => void, t: any }) => (
+const Controls = ({ isConnected, isConnecting, isPaused, error, onToggle, onPause, t }: { isConnected: boolean, isConnecting: boolean, isPaused: boolean, error: string | null, onToggle: () => void, onPause: () => void, t: any }) => (
   <div className="flex flex-col items-center gap-4 z-20">
     {error && (
       <div className="animate-in fade-in slide-in-from-bottom-2 text-red-400 bg-red-950/30 px-6 py-3 rounded-2xl border border-red-500/30 text-sm mb-4 backdrop-blur-md">
@@ -312,27 +343,37 @@ const Controls = ({ isConnected, isConnecting, error, onToggle, t }: { isConnect
       </div>
     )}
     {!isConnecting && (
-      <button
-        onClick={onToggle}
-        className={`group relative px-12 py-6 rounded-full font-black text-lg uppercase tracking-widest transition-all duration-500 transform hover:scale-105 active:scale-95 ${isConnected
-          ? 'bg-red-600/90 hover:bg-red-500 text-white shadow-[0_0_30px_rgba(220,38,38,0.5)]'
-          : 'bg-yellow-500 text-black hover:bg-yellow-400 shadow-[0_0_30px_rgba(234,179,8,0.4)]'
-          }`}
-      >
-        <div className="flex items-center gap-4">
-          {isConnected ? (
-            <>
-              <PhoneOff className="w-6 h-6" />
-              <span>{t.live.end}</span>
-            </>
-          ) : (
-            <>
-              <Mic className="w-6 h-6 group-hover:scale-110 transition-transform" />
-              <span>{t.live.start}</span>
-            </>
-          )}
-        </div>
-      </button>
+      <div className="flex items-center gap-4">
+        {isConnected && (
+          <button
+            onClick={onPause}
+            className={`w-16 h-16 rounded-full flex items-center justify-center transition-all duration-300 border ${isPaused ? 'bg-orange-500 text-black border-orange-400 hover:bg-orange-400' : 'bg-zinc-900 text-white border-zinc-700 hover:bg-zinc-800'}`}
+          >
+            {isPaused ? <Play className="w-6 h-6 fill-current" /> : <Pause className="w-6 h-6" />}
+          </button>
+        )}
+        <button
+          onClick={onToggle}
+          className={`group relative px-12 py-6 rounded-full font-black text-lg uppercase tracking-widest transition-all duration-500 transform hover:scale-105 active:scale-95 ${isConnected
+            ? 'bg-red-600/90 hover:bg-red-500 text-white shadow-[0_0_30px_rgba(220,38,38,0.5)]'
+            : 'bg-yellow-500 text-black hover:bg-yellow-400 shadow-[0_0_30px_rgba(234,179,8,0.4)]'
+            }`}
+        >
+          <div className="flex items-center gap-4">
+            {isConnected ? (
+              <>
+                <PhoneOff className="w-6 h-6" />
+                <span>{t.live.end}</span>
+              </>
+            ) : (
+              <>
+                <Mic className="w-6 h-6 group-hover:scale-110 transition-transform" />
+                <span>{t.live.start}</span>
+              </>
+            )}
+          </div>
+        </button>
+      </div>
     )}
     {(!isConnected && !isConnecting) && (
       <p className="text-zinc-500 text-sm font-medium">{t.live.desc_standby}</p>

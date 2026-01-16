@@ -267,7 +267,7 @@ ${productCatalog}
     config: {
       responseModalities: [Modality.AUDIO],
       speechConfig: {
-        voiceConfig: { prebuiltVoiceConfig: { voiceName: 'Zephyr' } },
+        voiceConfig: { prebuiltVoiceConfig: { voiceName: 'Puck' } },
       },
       systemInstruction: SYSTEM_INSTRUCTION + languageContext + (config?.userContext || ''),
     },

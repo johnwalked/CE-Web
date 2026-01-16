@@ -54,7 +54,7 @@ export const AIAssistantOrb: React.FC<AIAssistantOrbProps> = ({ chatMessages, se
   return (
     <>
       {/* Floating Full Screen Overlay */}
-      <div className={`fixed inset-2 md:inset-6 z-[100] bg-zinc-950/95 backdrop-blur-3xl flex flex-col transition-all duration-500 rounded-[2.5rem] border border-zinc-800 overflow-hidden shadow-2xl ring-1 ring-yellow-500/20 ${isOpen ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-95 pointer-events-none'}`} style={{ visibility: isOpen ? 'visible' : 'hidden' }}>
+      <div className={`fixed inset-2 md:inset-6 z-[100] bg-black/60 backdrop-blur-3xl flex flex-col transition-all duration-500 rounded-[2.5rem] border border-white/10 overflow-hidden shadow-2xl ring-1 ring-yellow-500/20 ${isOpen ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-95 pointer-events-none'}`} style={{ visibility: isOpen ? 'visible' : 'hidden' }}>
 
         {/* Header */}
         <div className="absolute top-0 left-0 w-full p-6 flex items-center justify-between z-20 pointer-events-none">

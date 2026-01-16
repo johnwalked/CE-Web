@@ -53,24 +53,24 @@ export const ProductList: React.FC<ProductListProps> = memo(({ language, brandFi
         {/* Search Bar */}
         <div className="relative group w-full max-w-xs md:max-w-sm">
           <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
-            <Search className="w-4 h-4 text-zinc-500 group-focus-within:text-yellow-500 transition-colors" />
+            <Search className="w-4 h-4 text-zinc-400 group-focus-within:text-yellow-500 transition-colors" />
           </div>
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder={t.chat.search}
-            className="w-full bg-zinc-900 border border-zinc-700 text-white text-sm rounded-full py-2.5 pl-10 pr-4 focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500/50 transition-all placeholder:text-zinc-600"
+            className="w-full bg-white/5 backdrop-blur-md border border-white/10 text-white text-sm rounded-full py-2.5 pl-10 pr-4 focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500/50 transition-all placeholder:text-zinc-500 shadow-inner"
           />
         </div>
 
-        <div className="flex bg-zinc-900 rounded-full p-1.5 border border-white/10 shadow-lg shrink-0">
+        <div className="flex bg-white/5 backdrop-blur-md rounded-full p-1 border border-white/10 shadow-lg shrink-0">
           {['All', 'Generator', 'Pump'].map((f) => (
             <button
               key={f}
               onClick={() => setTypeFilter(f as any)}
-              className={`px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 ${typeFilter === f
-                ? 'bg-yellow-500 text-black shadow-lg'
+              className={`px-4 py-1.5 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-wider transition-all duration-300 ${typeFilter === f
+                ? 'bg-yellow-500 text-black shadow-[0_0_15px_rgba(234,179,8,0.4)]'
                 : 'text-zinc-400 hover:text-white hover:bg-white/5'
                 }`}
             >
@@ -80,15 +80,15 @@ export const ProductList: React.FC<ProductListProps> = memo(({ language, brandFi
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
         {filteredProducts.map((product) => (
           <div
             key={product.id}
             onClick={() => setSelectedProduct(product)}
-            className="group relative bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden cursor-pointer hover:border-yellow-500 transition-all duration-500 hover:shadow-[0_30px_60px_-15px_rgba(234,179,8,0.3)] transform hover:-translate-y-2 hover:scale-[1.02] z-0 hover:z-10"
+            className="group relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden cursor-pointer hover:border-yellow-500/50 transition-all duration-500 hover:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] transform hover:-translate-y-1 hover:scale-[1.02] z-0 hover:z-10"
           >
-            <div className="aspect-video w-full overflow-hidden bg-black flex items-center justify-center relative m-2 rounded-xl mb-0 w-[calc(100%-1rem)]">
-              <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-10"></div>
+            <div className="aspect-[4/3] w-full overflow-hidden bg-black/20 flex items-center justify-center relative rounded-t-3xl border-b border-white/5">
+              <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/10 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-10"></div>
 
               {/* Refine Overlay Button - Special highlight for Yuchai YC100 */}
               <button
@@ -118,32 +118,32 @@ export const ProductList: React.FC<ProductListProps> = memo(({ language, brandFi
                 <span className="text-xs">{t.products.unavailable}</span>
               </div>
             </div>
-            <div className="p-6 space-y-4">
-              <div className="flex justify-between items-start">
-                <div>
-                  <h3 className="text-lg font-bold text-white group-hover:text-yellow-400 transition-colors uppercase leading-tight">
+            <div className="p-4 space-y-3">
+              <div className="flex flex-col gap-1">
+                <div className="flex justify-between items-start gap-2">
+                  <h3 className="text-sm font-black text-white group-hover:text-yellow-400 transition-colors uppercase leading-tight line-clamp-2">
                     {product.name}
                   </h3>
-                  <p className="text-xs text-yellow-500 font-bold uppercase mt-1 tracking-wider">{product.brand}</p>
+                  <span className="bg-white/10 backdrop-blur-sm text-[10px] font-mono font-bold px-2 py-1 rounded text-white border border-white/10 whitespace-nowrap">
+                    {product.powerKW} kW
+                  </span>
                 </div>
-                <span className="bg-zinc-800 text-xs font-mono font-bold px-3 py-1.5 rounded text-white border border-zinc-700">
-                  {product.powerKW} kW
-                </span>
+                <p className="text-[10px] text-yellow-500 font-bold uppercase tracking-wider">{product.brand}</p>
               </div>
 
-              <div className="grid grid-cols-2 gap-3 text-xs text-zinc-400 mt-2">
-                <div className="flex items-center gap-2 bg-black/20 p-2 rounded border border-white/5">
-                  <Battery className="w-3.5 h-3.5 text-yellow-500" />
-                  {product.specs.phase}
+              <div className="grid grid-cols-2 gap-2 text-[10px] text-zinc-400">
+                <div className="flex items-center gap-1.5 bg-black/20 p-1.5 rounded border border-white/5">
+                  <Battery className="w-3 h-3 text-yellow-500 shrink-0" />
+                  <span className="truncate">{product.specs.phase}</span>
                 </div>
-                <div className="flex items-center gap-2 bg-black/20 p-2 rounded border border-white/5">
-                  <Activity className="w-3.5 h-3.5 text-yellow-500" />
-                  {product.specs.cooling}
+                <div className="flex items-center gap-1.5 bg-black/20 p-1.5 rounded border border-white/5">
+                  <Activity className="w-3 h-3 text-yellow-500 shrink-0" />
+                  <span className="truncate">{product.specs.cooling}</span>
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-white/5 flex items-center gap-2 text-sm text-yellow-500 font-bold uppercase tracking-wide group-hover:translate-x-1 transition-transform">
-                {t.products.viewDetails} <Info className="w-4 h-4" />
+              <div className="pt-3 border-t border-white/5 flex items-center gap-2 text-[10px] text-yellow-500/80 font-bold uppercase tracking-wide group-hover:translate-x-1 transition-transform">
+                {t.products.viewDetails} <Info className="w-3 h-3" />
               </div>
             </div>
           </div>

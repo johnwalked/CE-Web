@@ -45,7 +45,7 @@ export const Layout: React.FC<LayoutProps> = memo(({ children, activeTab, onTabC
       </div>
 
       <div className="px-4 pt-4 z-50 sticky top-0">
-        <header className="max-w-7xl mx-auto rounded-3xl md:rounded-full border border-white/10 bg-zinc-900/60 backdrop-blur-2xl shadow-xl ring-1 ring-white/5">
+        <header className="max-w-7xl mx-auto rounded-3xl md:rounded-full border border-white/10 bg-white/5 backdrop-blur-xl shadow-2xl ring-1 ring-white/5">
           <div className="px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div className="flex items-center gap-2 flex-shrink-0">
               <div className="bg-yellow-500 p-2 rounded-lg backdrop-blur-sm shadow-lg shadow-yellow-500/20">

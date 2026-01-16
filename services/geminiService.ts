@@ -215,7 +215,8 @@ export interface LiveCallbacks {
 
 export const connectLive = async (
   callbacks: LiveCallbacks,
-  currentLanguage: string
+  currentLanguage: string,
+  config?: { userContext?: string }
 ): Promise<{
   sendAudio: (data: Float32Array) => void;
   close: () => void;
@@ -268,7 +269,7 @@ ${productCatalog}
       speechConfig: {
         voiceConfig: { prebuiltVoiceConfig: { voiceName: 'Zephyr' } },
       },
-      systemInstruction: SYSTEM_INSTRUCTION + languageContext,
+      systemInstruction: SYSTEM_INSTRUCTION + languageContext + (config?.userContext || ''),
     },
   });
 

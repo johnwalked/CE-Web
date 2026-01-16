@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { connectLive } from '../services/geminiService';
+import { memoryService } from '../services/memoryService';
 import { Mic, PhoneOff, Cog, Wifi, Loader2, Phone, Copy, Check, X as XIcon } from 'lucide-react';
 import { Language } from '../types';
 import { TRANSLATIONS } from '../constants';
@@ -167,7 +168,9 @@ export const LiveSession: React.FC<LiveSessionProps> = ({ language }) => {
           setIsConnected(false);
           setIsConnecting(false);
         }
-      }, language);
+      }, language, {
+        userContext: memoryService.buildContextContext()
+      });
 
       liveClientRef.current = client;
       setIsConnected(true);
@@ -207,6 +210,12 @@ export const LiveSession: React.FC<LiveSessionProps> = ({ language }) => {
     setIsConnected(false);
     setIsConnecting(false);
     setShowContactToast(false);
+
+    // Save conversation attempt
+    if (transcriptionBufferRef.current.length > 10) {
+      memoryService.saveConversationAttempt(transcriptionBufferRef.current.substring(0, 200) + "...");
+    }
+    transcriptionBufferRef.current = "";
   }, []);
 
   const copyToClipboard = () => {

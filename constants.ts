@@ -1362,6 +1362,8 @@ export const PRODUCTS: Product[] = [
   // KEFO
   { id: 'kefo-180kw', name: 'Kefo 180kW Generator', brand: 'Kefo', type: 'Generator', powerKW: 180, stock: 2, imageUrl: '/images/kefo-large-silent.png', specs: { maxPower: '225kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Kefo generator.' },
   { id: 'kefo-120kw', name: 'Kefo 120kW Generator', brand: 'Kefo', type: 'Generator', powerKW: 120, stock: 4, imageUrl: '/images/kefo-large-silent.png', specs: { maxPower: '150kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Kefo generator.' },
+  { id: 'kefo-150kw', name: 'Kefo 150kW Generator', brand: 'Kefo', type: 'Generator', powerKW: 150, stock: 1, imageUrl: '/images/kefo-large-silent.png', specs: { maxPower: '188kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Kefo generator.' },
+
 
   // YUCHAI NEW
   { id: 'yuchai-120kw-new', name: 'Yuchai 120kW Generator', brand: 'Yuchai', type: 'Generator', powerKW: 120, stock: 15, imageUrl: '/images/yuchai-100kw.png', specs: { maxPower: '150kVA', powerFactor: '0.8', phase: '3', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Silent', dimensions: 'Standard', weight: 'N/A' }, description: 'Yuchai generator.' },
@@ -1410,6 +1412,8 @@ export const PRODUCTS: Product[] = [
   // KEFO PUMPS
   { id: 'kefo-180kw-pump', name: 'Kefo 180kW Pump', brand: 'Kefo', type: 'Pump', powerKW: 180, stock: 2, imageUrl: '/images/pump-120kw-open.png', specs: { maxPower: '240HP', powerFactor: 'N/A', phase: 'N/A', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Open', dimensions: 'Standard', weight: 'N/A' }, description: 'Kefo pump.' },
   { id: 'kefo-120kw-pump', name: 'Kefo 120kW Pump', brand: 'Kefo', type: 'Pump', powerKW: 120, stock: 4, imageUrl: '/images/pump-120kw-open.png', specs: { maxPower: '160HP', powerFactor: 'N/A', phase: 'N/A', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Open', dimensions: 'Standard', weight: 'N/A' }, description: 'Kefo pump.' },
+  { id: 'kefo-150kw-pump-high', name: 'Kefo 150kW Pump (High Output)', brand: 'Kefo', type: 'Pump', powerKW: 176, stock: 1, imageUrl: '/images/pump-120kw-open.png', specs: { maxPower: '235HP', powerFactor: 'N/A', phase: 'N/A', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Open', dimensions: 'Standard', weight: 'N/A' }, description: 'High output Kefo pump.' },
+
 
   // YUCHAI PUMPS (NEW)
   { id: 'yuchai-120kw-pump-new', name: 'Yuchai 120kW Pump', brand: 'Yuchai', type: 'Pump', powerKW: 120, stock: 15, imageUrl: '/images/pump-120kw-open.png', specs: { maxPower: '160HP', powerFactor: 'N/A', phase: 'N/A', cooling: 'Water', fuelConsumption: 'N/A', noiseLevel: 'Open', dimensions: 'Standard', weight: 'N/A' }, description: 'Yuchai pump.' },
@@ -1555,7 +1559,7 @@ PRODUCT LINES & SPECIALTIES:
         - **Yunnei**: 600kW(2), 400kW(1), 334kW(1), 120kW(4), 100kW(100), 80kW(5), 77kW(2), 60kW(7), 55kW(2), 38kW(2), 25kW(3), 23.1kW(1), 20kW(3).
         - **Weichai**: 400kW(2), 353kW(4), 330kW(2), 275kW(1).
         - **Last**: 200kW(2), 160kW(2), 100kW(10), 75kW(6), 40kW(1), 25kW(4).
-        - **Kefo**: 180kW(2), 120kW(4).
+        - **Kefo**: 180kW(2), 150kW(1), 120kW(4).
         - **Yuchai**: 250kW(1), 200kW(2), 150kW(12), 120kW(15), 92kW(15).
         - **United Power**: 11kW Silent(18), 8kW(5), 7kW(5).
 
